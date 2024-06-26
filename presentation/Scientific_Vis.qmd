@@ -37,7 +37,8 @@ filters:
 
 ## {data-background-image=images/ICCS_content_slide.png}
 <div style="margin-top: 100px;", size = "18">
-Anatomy of a Matplotlib Figure
+Anatomy of a Matplotlib plot
+<br>
 </div>
 :::: {.columns}
 
@@ -46,7 +47,22 @@ Anatomy of a Matplotlib Figure
 :::
 
 ::: {.column width="50%"}
-Some text
+'Figure' is the canvas on which you add one or more axes
+
+<br>
+
+'Axes' is the part of the Figure where information is added
+
+<br>
+
+
+'Artist' is the base class for all elements that can be added to the axes - 2D line, patch, text
+
+<br>
+
+'Axis' is the x- or y-axis (not to be confused 
+with axes)
+
 
 :::
 ::::
@@ -54,11 +70,14 @@ Some text
 ## {data-background-image="images/ICCS_content_slide.png"}
 
 <div style="margin-top: 50px;", size = "18">
+The Matplotlib interface
+<br>
+<br>
 </div>
-
 :::: {.columns}
 
 ::: {.column width="50%"}
+
 Pyplot (Implicit)
 
 ```python
@@ -97,182 +116,34 @@ plt.show
 ::::
 
 <br>
+Plain Pyplot is a simplified interface for quick plotting
+<br>
+<br>
+
 Explicit approach allows advanced plot customsiation.
 
 ## {data-background-image="images/ICCS_content_slide.png"}
 <div style="margin-top: 100px;", size = "18">
-Matplotlib customisations: inset charts
+Matplotlib customisations: Jupyter Lab Exercise 1
 </div>
+:::: {.columns}
+::: {.column}
+<img data-src="/images/plt_inset.png" height="250" width="400" />
+<img data-src="/images/plt_annot.png" height="250" width="400" />
+:::
 
-```{python}
-import matplotlib.figure as figure
-import matplotlib.backends.backend_agg as agg
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Create a figure
-fig = figure.Figure(figsize=(6, 4))
-canvas = agg.FigureCanvasAgg(fig)
-
-# Add main axes
-main_ax = fig.add_axes([0.1, 0.1, 0.7, 0.7])
-
-# Add inset axes
-inset_ax = fig.add_axes([0.55, 0.55, 0.3, 0.3])
-
-# Data for main plot
-x_main = np.linspace(0, 10, 100)
-y_main = np.sin(x_main)
-
-# Data for inset plot (highlight a specific region of the main data)
-x_inset = np.linspace(2, 4, 50)
-y_inset = np.sin(x_inset)
-
-# Plot data on main axes
-main_ax.plot(x_main, y_main, label='Main Data')
-main_ax.set_title('Main Plot')
-main_ax.set_xlabel('X-axis')
-main_ax.set_ylabel('Y-axis')
-main_ax.legend()
-
-# Add an arrow with a LaTeX description
-# Coordinates where the arrow points
-""" x_arrow = 5
-y_arrow = np.sin(x_arrow)
-main_ax.annotate(r'$y = \sin(x)$', 
-                 xy=(x_arrow, y_arrow), xycoords='data',
-                 xytext=(x_arrow+2, y_arrow+0.5), textcoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 fontsize=12) """
-
-# Plot data on inset axes
-inset_ax.plot(x_inset, y_inset, color='red', label='Inset Data')
-inset_ax.set_title('Inset Plot')
-inset_ax.legend()
-
-# Highlight the inset area on the main plot
-main_ax.indicate_inset_zoom(inset_ax)
-
-# Render the plot
-canvas.draw()
-
-# Convert to a displayable format
-s, (width, height) = canvas.print_to_buffer()
-buffer = np.frombuffer(s, np.uint8).reshape((height, width, 4))
-
-plt.imshow(buffer)
-plt.axis('off')
-plt.show()
-
-```
-
-## {data-background-image="images/ICCS_content_slide.png"}
-<div style="margin-top: 100px;", size = "18">
-Code to produce an inset plot:
-<br>
-<br>
-</div>
-```python
-# Create a figure
-fig = figure.Figure()
-canvas = agg.FigureCanvasAgg(fig)
-
-# Add main axes
-main_ax = fig.add_axes([0.1, 0.1, 0.7, 0.7])
-
-# Add inset axes
-inset_ax = fig.add_axes([0.55, 0.55, 0.3, 0.3])
-
-# Data for main plot
-x_main = np.linspace(0, 10, 10)
-y_main = np.sin(x_main)
-
-# Data for inset plot (highlight a specific region of the main data)
-x_inset = np.linspace(2, 4, 50)
-y_inset = np.sin(x_inset)
-
-# Plot data on main axes
-main_ax.plot(x_main, y_main, label='Main Data')
-main_ax.set_title('Main Plot')
-main_ax.set_xlabel('X-axis')
-main_ax.set_ylabel('Y-axis')
-main_ax.legend()
-
-# Plot data on inset axes
-inset_ax.plot(x_inset, y_inset, color='red', label='Inset Data')
-inset_ax.set_title('Inset Plot')
-inset_ax.legend()
-
-# Highlight the inset area on the main plot
-main_ax.indicate_inset_zoom(inset_ax)
-
-# Render the plot
-canvas.draw()
-
-# Convert to a displayable format
-s, (width, height) = canvas.print_to_buffer()
-buffer = np.frombuffer(s, np.uint8).reshape((height, width, 4))
-
-plt.imshow(buffer)
-plt.axis('off')
-plt.show()
-
-```
+::: {.column}
+<img data-src="/images/plt_dates.png" height="500" width="400" />
+:::
+::::
 
 
 ## {data-background-image="images/ICCS_content_slide.png"}
 
 <div style="margin-top: 100px;", size = "18">
-Plotting NetCDF data with basic Matplotlib commands
+Plotting NetCDF data with basic Matplotlib commands: Jupyter Lab Exercise 2
 </div>
-
-```{python}
-import numpy as np
-import matplotlib.pyplot as plt
-import netCDF4 as nc
-import cartopy.crs as ccrs
-import matplotlib.animation as animation
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-import netCDF4 as nc
-import cartopy.crs as ccrs
-import matplotlib.animation as animation
-
-
-def plot_netcdf():
-    # Load the netCDF file
-    file_path = 'data/MERRA2_400.tavg1_2d_lnd_Nx.20240401.nc4'
-    dataset = nc.Dataset(file_path)
-
-    # Extract the variables
-    lats = dataset.variables['lat'][:]
-    lons = dataset.variables['lon'][:]
-    temps = dataset.variables['TSURF'][0, :, :]  # Assuming the time dimension is the first dimension
-    times = dataset.variables['time'][:]
-
-    # Close the dataset
-    dataset.close()
-
-    # Create a figure
-    fig, ax = plt.subplots(figsize=(12, 6))
-
-    # Create a 2D grid of latitude and longitude
-    lon_grid, lat_grid = np.meshgrid(lons, lats)
-
-    # Plot the temperature data
-    c = ax.pcolormesh(lon_grid, lat_grid, temps, shading='auto')
-    fig.colorbar(c, ax=ax, label='Temperature')
-
-    # Set labels and title
-    ax.set_xlabel('Longitude')
-    ax.set_ylabel('Latitude')
-    ax.set_title('Surface Temperature Distribution')
-
-
-plot_netcdf()
-```
+<img data-src="/images/plt_netcdf.png" height="500" width="800" />
 
 ## {data-background-image="images/ICCS_content_slide.png"}
 <div style="margin-top: 100px;", size = "18">
@@ -297,7 +168,7 @@ Introduction to Cartopy
 ## {data-background-image="images/ICCS_content_slide.png"}
 
 <div style="margin-top: 100px;", size = "18">
-Examples of Cartopy features:
+Examples of Cartopy features: Jupyter Lab Exercise 4
 </div>
 
 :::: {.columns}
@@ -307,17 +178,8 @@ Examples of Cartopy features:
 Geographic maps
 <br>
 ![Global coastline map](/images/Cartopy_coastlines.png){width=500}
+
 <br>
-
-```python
-import cartopy.crs as ccrs
-import matplotlib.pyplot as plt
-
-ax = plt.axes(projection=ccrs.PlateCarree())
-ax.coastlines()
-
-plt.show()
-```
 
 :::
 
@@ -326,47 +188,6 @@ Feature maps
 <br>
 ![](/images/Cartopy_features.png){width=300}
 
-```python
-import matplotlib.pyplot as plt
-import cartopy.crs as ccrs
-import cartopy.feature as cfeature
-from matplotlib.offsetbox import AnchoredText
-
-
-def main():
-    ax = plt.axes(projection=ccrs.PlateCarree())
-    ax.set_extent([80, 170, -45, 30])
-
-    # Put a background image on for nice sea rendering.
-    ax.stock_img()
-
-    # Create a feature for States/Admin 1 regions at 1:50m from Natural Earth
-    states_provinces = cfeature.NaturalEarthFeature(
-        category='cultural',
-        name='admin_1_states_provinces_lines',
-        scale='50m',
-        facecolor='none')
-
-    SOURCE = 'Natural Earth'
-    LICENSE = 'public domain'
-
-    ax.add_feature(cfeature.LAND)
-    ax.add_feature(cfeature.COASTLINE)
-    ax.add_feature(states_provinces, edgecolor='gray')
-
-    # Add a text annotation for the license information to the
-    # the bottom right corner.
-    text = AnchoredText(r'$\mathcircled{{c}}$ {}; license: {}'
-                        ''.format(SOURCE, LICENSE),
-                        loc=4, prop={'size': 12}, frameon=True)
-    ax.add_artist(text)
-
-    plt.show()
-
-if __name__ == '__main__':
-    main()
-
-```
 :::
 ::::
 
@@ -375,133 +196,14 @@ if __name__ == '__main__':
 <div style="margin-top: 100px;", size = "18">
 Using Features and Projections in Cartopy
 </div>
-:::: {.columns}
-::: {.column}
-```{python}
-import os
-import matplotlib.pyplot as plt
-from netCDF4 import Dataset as netcdf_dataset
-import numpy as np
 
-from cartopy import config
-import cartopy
-import cartopy.feature as cfeature
-import cartopy.crs as ccrs
-
-dataset = netcdf_dataset('data/MERRA2_400.tavg1_2d_lnd_Nx.20240401.nc4')
-sst = dataset.variables['TSURF'][0, :, :]
-lats = dataset.variables['lat'][:]
-lons = dataset.variables['lon'][:]
-
-ax = plt.axes(projection=ccrs.PlateCarree())
-ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=1)
-
-plt.contourf(lons, lats, sst, 60,
-             transform=ccrs.PlateCarree())
-
-ax.coastlines()
-
-plt.show()
-
-```
-
-:::
-
-::: {.column}
-
-```{python}
-import os
-import matplotlib.pyplot as plt
-from netCDF4 import Dataset as netcdf_dataset
-import numpy as np
-
-from cartopy import config
-import cartopy.crs as ccrs
-
-dataset = netcdf_dataset('data/MERRA2_400.tavg1_2d_lnd_Nx.20240401.nc4')
-sst = dataset.variables['TSURF'][0, :, :]
-lats = dataset.variables['lat'][:]
-lons = dataset.variables['lon'][:]
-
-ax = plt.axes(projection=ccrs.Orthographic(central_longitude=0.0, central_latitude=50.0, globe=None))
-
-ax.add_feature(cartopy.feature.BORDERS, linestyle='-', alpha=1)
-
-plt.contourf(lons, lats, sst, 60,
-             transform=ccrs.PlateCarree())
-
-ax.coastlines()
-
-plt.show()
-
-```
-Same data in orthographic projection, centred on UK.
-:::
-::::
+<img data-src="/images/cartopy_projection_netcdf.png" height="500" width="750" />
 
 # {data-background-image="images/ICCS_content_slide.png"}
-
-```{python}
-import matplotlib.pyplot as plt
-import cartopy.crs as ccrs
-from netCDF4 import Dataset as netcdf_dataset
-# Ensure SciPy is imported
-from scipy.interpolate import griddata
-
-dataset = netcdf_dataset('data/MERRA2_400.inst3_3d_asm_Nv.20240501.nc4')
-
-
-u = dataset.variables['U'][0, 0, :, :]  # U-component of wind
-v = dataset.variables['V'][0, 0, :, :]  # V-component of wind
-lats = dataset.variables['lat'][:]
-lons = dataset.variables['lon'][:]
-
-lon2d, lat2d = np.meshgrid(lons, lats)
-
-magnitude = (u ** 2 + v ** 2) ** 0.5
-
-fig = plt.figure(figsize=(10, 6))
-ax = plt.axes(projection=ccrs.Orthographic(central_longitude=0, central_latitude=50))
-# Plot wind vectors
-#ax.quiver(lon2d, lat2d, u, v, transform=ccrs.PlateCarree())
-stream = ax.streamplot(lon2d, lat2d, u, v, transform=ccrs.PlateCarree(), density=2, color=magnitude, linewidth=1)
-
-
-# Add color to the land
-land = cfeature.NaturalEarthFeature(
-    'physical', 'land', '110m',
-    edgecolor='face',
-    facecolor=cfeature.COLORS['land']
-)
-ax.add_feature(land)
-
-# Add color to the sea
-sea = cfeature.NaturalEarthFeature(
-    'physical', 'ocean', '110m',
-    edgecolor='face',
-    facecolor=cfeature.COLORS['water']
-)
-ax.add_feature(sea)
-
-
-ax.coastlines(color = 'r', linewidth=1)
-plt.show()
-
-```
-# {data-background-image="images/ICCS_content_slide.png"}
-
-
 
 
 # {data-background-image="images/ICCS_content_slide.png"}
 
-```{pyodide-python}
-n = 5
-while n > 0:
-  print(n)
-  n = n - 1
 
-print('Blastoff!')
-```
 
 
