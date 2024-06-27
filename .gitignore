@@ -1,5 +1,2 @@
-# Don't upload html as users can generate this locally
-*.html
-
 # Don't upload locally generated files
 *_files/
