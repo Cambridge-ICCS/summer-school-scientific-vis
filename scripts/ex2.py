@@ -1,10 +1,12 @@
-import numpy as np
+"""Script containing code for exercise 2."""
+
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+import numpy as np
+from matplotlib import animation
 
 
-# Function to generate synthetic ocean current data
 def generate_synthetic_ocean_current_data(num_frames, nx, ny):
+    """Generate synthetic ocean current data."""
     data = []
     for t in range(num_frames):
         u = np.sin(2 * np.pi * (np.linspace(0, 1, nx)[:, None] + t / num_frames)) * 2
@@ -22,7 +24,8 @@ num_particles = 200
 ocean_current_data = generate_synthetic_ocean_current_data(num_frames, nx, ny)
 
 # Initialize particle positions
-particle_positions = np.random.rand(num_particles, 2)
+rng = np.random.default_rng()
+particle_positions = rng.random((num_particles, 2))
 particle_positions[:, 0] *= nx
 particle_positions[:, 1] *= ny
 
@@ -35,8 +38,8 @@ ax.set_ylim(0, ny)
 )
 
 
-# Function to update particle positions for animation
 def update_particles(frame):
+    """Update particle positions for animation."""
     u, v = ocean_current_data[frame]
     for i in range(num_particles):
         x = int(particle_positions[i, 0]) % nx

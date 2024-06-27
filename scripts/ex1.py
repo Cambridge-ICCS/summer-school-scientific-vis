@@ -1,8 +1,10 @@
-import numpy as np
+"""Script containing code for exercise 1."""
+
+import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import netCDF4 as nc
-import cartopy.crs as ccrs
-import matplotlib.animation as animation
+import numpy as np
+from matplotlib import animation
 
 # Load the netCDF file
 file_path = "MERRA2_400.tavg1_2d_lnd_Nx.20240401.nc4"
@@ -43,14 +45,15 @@ temp_plot = ax.pcolormesh(
 # cbar = plt.colorbar(temp_plot, orientation='vertical', pad=0.05, aspect=50)
 # cbar.set_label('Land Surface Temperature (K)')
 
-ax.coastlines
-ax.gridlines
+ax.coastlines()
+ax.gridlines()
 
 # Show the plot
 # plt.show()
 
 
 def update_plot(frame):
+    """Update with a new plot for each frame of the animation."""
     ax.coastlines()
     ax.gridlines()
     temp_plot = ax.pcolormesh(
