@@ -1,5 +1,7 @@
 <img src="https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/logo2_1.png"  width="355" align="left">
+
 <br><br><br><br><br>
+
 # ICCS Scientific Visualisation with Matplotlib
 
 ![GitHub](https://img.shields.io/github/license/Cambridge-ICCS/practical-ml-with-pytorch)
