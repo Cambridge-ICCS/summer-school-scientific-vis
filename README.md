@@ -48,8 +48,8 @@ for you to do some preparation in advance.
 Expected knowledge is outlined below, along with resources for reading if you are unfamiliar.
 
 ### Python
-The course will be taught in python using netCDF4, Matplotlib and Cartopy.
-Whilst no prior knowledge of thes epython packages is expected we assume users are familiar with the basics of Python3.
+The course will be taught in python using netCDF4, Matplotlib and Cartopy python packages.
+Whilst no prior knowledge of these python packages is expected we assume users are familiar with the basics of Python3.
 This includes:
 - Basic mathematical operations
 - Writing and running scripts/programs
