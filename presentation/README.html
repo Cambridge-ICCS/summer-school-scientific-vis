@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 
 <p><img src="https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/logo2_1.png" width="355" align="left"></p>
 <p><br><br><br><br><br></p>
-<section id="iccs-scientific-visualisation-with-matplotlib" class="level1">
-<h1>ICCS Scientific visualisation with Matplotlib</h1>
-<p><img src="https://img.shields.io/github/license/Cambridge-ICCS/practical-ml-with-pytorch.png" class="img-fluid" alt="GitHub"> [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]</p>
+<section id="iccs-scientific-visualisation" class="level1">
+<h1>ICCS Scientific visualisation</h1>
+<p><img src="https://img.shields.io/github/license/Cambridge-ICCS/summer-school-scientific-vis.png" class="img-fluid" alt="GitHub"> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" class="img-fluid" alt="CC BY-NC-SA 4.0"></a></p>
 <p>This repository contains documentation, resources, and code for the Scientific Visualisation with matplotlib session designed and delivered by <a href="https://jackatkinson.net/">Jack Atkinson</a> (<a href="https://github.com/jatkinson1000"><strong><span class="citation" data-cites="jatkinson1000">@jatkinson1000</span></strong></a>) and James Emberton (<a href="https://github.com/j-emberton"><strong><span class="citation" data-cites="j-emberton">@j-emberton</span></strong></a>) of <a href="https://github.com/Cambridge-ICCS">ICCS</a>.<br>
 The material has been delivered at the <a href="https://iccs.cam.ac.uk/events/iccs-summer-school-2024">ICCS</a> summer school.<br>
 All materials, including slides and videos, are available such that individuals can cover the course in their own time.</p>
@@ -73,22 +73,101 @@ All materials, including slides and videos, are available such that individuals 
 <p>However, more specifically we aim to:</p>
 <p>summarise key considerations when visualising scientific data, provide an understanding of the Matplotlib package and how to use it effectively, introduce the Cartopy package and show how it extends Matplotlib functionality for geospatial plotting, introduce common climate data formats and show how these can be parsed to generate plottable data, and encourage good research software engineering (RSE) practice while using code to generate scientific visualisations.</p>
 </section>
-<section id="presentation" class="level1">
-<h1>Presentation</h1>
-<p>This folder contains materials for the slides accompanying this workshop.</p>
+<section id="teaching-material" class="level1">
+<h1>Teaching material</h1>
+<p>The course material is supplied as Quarto markdown slides with an accompanying jupyter lab notebook.</p>
+<p>Slides can be found in the <a href="presentation/">presentation</a> directory.</p>
+<p>Notebook can be found in the <a href="notebook/">notebook</a> directory.</p>
+<section id="preparation-and-pre-requisites" class="level2">
+<h2 class="anchored" data-anchor-id="preparation-and-pre-requisites">Preparation and pre-requisites</h2>
+<p>To get the most out of the session we assume a basic understanding in a few areas and for you to do some preparation in advance. Expected knowledge is outlined below, along with resources for reading if you are unfamiliar.</p>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<p>The course will be taught in python using netCDF4, Matplotlib and Cartopy. Whilst no prior knowledge of thes epython packages is expected we assume users are familiar with the basics of Python3. This includes: - Basic mathematical operations - Writing and running scripts/programs - Writing and using functions - The concept of <a href="https://eli5.gg/Object-oriented%20programming">object orientation</a><br>
+i.e.&nbsp;that an object, e.g.&nbsp;a dataset, can have associated functions/methods associated with it. - Familiarity with the <a href="https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/index.html">concept of a jupyter notebook</a></p>
+</section>
+<section id="git-and-github" class="level3">
+<h3 class="anchored" data-anchor-id="git-and-github">git and GitHub</h3>
+<p>You will be expected to know how to - clone and/or fork a repository</p>
+<p>The <a href="https://www.youtube.com/watch?v=ZrwzK4CnJ3Q">workshop from the 2022 ICCS Summer School</a> should provide the necessary knowledge.</p>
+</section>
+<section id="preparation" class="level3">
+<h3 class="anchored" data-anchor-id="preparation">Preparation</h3>
+<p>In preparation for the course please ensure that your computer contains the following: - A text editor - e.g.&nbsp;vim/<a href="https://neovim.io/">neovim</a>, <a href="https://gedit.en.softonic.com/">gedit</a>, <a href="https://code.visualstudio.com/">vscode</a>, <a href="https://www.sublimetext.com/">sublimetext</a> etc. to open and edit code files - A terminal emulator - e.g.&nbsp;<a href="https://help.gnome.org/users/gnome-terminal/stable/">GNOME Terminal</a>, <a href="https://wezfurlong.org/wezterm/index.html">wezterm</a>, <a href="https://learn.microsoft.com/en-us/windows/terminal/">Windows Terminal (windows only)</a>, <a href="https://iterm2.com/">iTerm (mac only)</a> - python virtual environment (see <a href="#installation-and-setup">Installation and setup</a>)</p>
+<p>Note for Windows users: <em>We have linked suitable applications for windows in the above lists. However, you may wish to refer to <a href="https://learn.microsoft.com/en-us/windows/python/beginners">Windows’ getting-started with python information</a> for a complete guide to getting set up on a Windows system.</em></p>
+<p>If you require assistance or further information with any of these please reach out to us before a training session.</p>
+</section>
+</section>
 <section id="building" class="level2">
 <h2 class="anchored" data-anchor-id="building">Building</h2>
 <p>The slides are written using quarto. To build them run:</p>
 <pre><code>quarto render Scientific_Vis.qmd </code></pre>
 <p>from this directory and inspect the output .html file.</p>
 </section>
-<section id="requirements" class="level2">
-<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
-<p>To build these slides you need a virtual environment with:</p>
+<section id="installation-and-setup" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-setup">Installation and setup</h2>
+<p>There are three options for participating in this workshop for which instructions are provided below:</p>
 <ul>
-<li>jupyter</li>
-<li>matplotlib</li>
+<li>via a <a href="#local-install">local install</a></li>
+<li>on <a href="#google-colab">Google Colab</a></li>
+<li>on <a href="#binder">binder</a></li>
 </ul>
+<p>We recommend the <a href="#local-install">local install</a> approach, especially if you forked the repository, as it is the easiest way to keep a copy of your work and push back to GitHub.</p>
+<p>However, if you experience issues with the installation process or are unfamiliar with the terminal/installation process there is the option to run the notebooks in <a href="#google-colab">Google Colab</a> or on <a href="#binder">binder</a>.</p>
+<section id="local-install" class="level3">
+<h3 class="anchored" data-anchor-id="local-install">Local Install</h3>
+<section id="clone-or-fork-the-repository" class="level4">
+<h4 class="anchored" data-anchor-id="clone-or-fork-the-repository">1. Clone or fork the repository</h4>
+<p>Navigate to the location you want to install this repository on your system and clone via https by running:</p>
+<pre><code>git clone https://github.com/Cambridge-ICCS/summer-school-scientific-vis.git</code></pre>
+<p>This will create a directory <code>summer-school-scientific-vis/</code> with the contents of this repository.</p>
+<p>Please note that if you have a GitHub account and want to preserve any work you do we suggest you first <a href="https://github.com/Cambridge-ICCS/summer-school-scientific-vis/fork">fork the repository</a> and then clone your fork. This will allow you to push your changes and progress from the workshop back up to your fork for future reference.</p>
+</section>
+<section id="create-a-virtual-environment" class="level4">
+<h4 class="anchored" data-anchor-id="create-a-virtual-environment">2. Create a virtual environment</h4>
+<p>Before installing any Python packages it is important to first create a Python virtual environment. This provides an insulated environment inside which we can install Python packages without polluting the operating systems’ Python environment.</p>
+<p>If you have never done this before don’t worry: it is <em>very</em> good practise, especially when you are working on multiple projects, and easy to do.</p>
+<pre><code>python3 -m venv SVvenv</code></pre>
+<p>This will create a directory called <code>SVvenv</code> containing software for the virtual environment. To activate the environment run:</p>
+<pre><code>source SVvenv/bin/activate</code></pre>
+<p>You can now work on python from within this isolated environment, installing packages as you wish without disturbing your base system environment.</p>
+<p>When you have finished working on this project run:</p>
+<pre><code>deactivate</code></pre>
+<p>to deactivate the venv and return to the system python environment.</p>
+<p>You can always boot back into the venv as you left it by running the activate command again.</p>
+</section>
+<section id="install-dependencies" class="level4">
+<h4 class="anchored" data-anchor-id="install-dependencies">3. Install dependencies</h4>
+<p>It is now time to install the dependencies for our code, for example PyTorch. The project has been packaged with a <a href="pyproject.toml"><code>pyproject.toml</code></a> so can be installed in one go. From within the root directory in a active virtual environment run:</p>
+<pre><code>pip install .</code></pre>
+<p>This will download the relevant dependencies into the venv as well as setting up the datasets that we will be using in the course.<br>
+</p>
+</section>
+<section id="run-the-notebook" class="level4">
+<h4 class="anchored" data-anchor-id="run-the-notebook">4. Run the notebook</h4>
+<p>From the current directory, launch the jupyter notebook server:</p>
+<pre><code>jupyter notebook</code></pre>
+<p>This command should then point you to the right location within your browser to use the notebook, typically <a href="http://localhost:8888/">http://localhost:8888/</a>.</p>
+</section>
+</section>
+</section>
+<section id="license" class="level2">
+<h2 class="anchored" data-anchor-id="license">License</h2>
+<p>The code materials in this project are licensed under the <a href="LICENSE">MIT License</a>.</p>
+<p>The teaching materials are licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" class="img-fluid figure-img" alt="CC BY-NC-SA 4.0"></a></p>
+<figcaption>CC BY-NC-SA 4.0</figcaption>
+</figure>
+</div>
+</section>
+<section id="contribution-guidelines-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="contribution-guidelines-and-support">Contribution Guidelines and Support</h2>
+<p>If you spot an issue with the materials please let us know by <a href="https://github.com/Cambridge-ICCS/summer-school-scientific-vis/issues/new/choose">opening an issue</a> here on GitHub clearly describing the problem.</p>
+<p>If you are able to fix an issue that you spot, or an <a href="https://github.com/Cambridge-ICCS/summer-school-scientific-vis/issues">existing open issue</a> please get in touch by commenting on the issue thread.</p>
+<p>Contributions from the community are welcome. To contribute back to the repository please first <a href="https://github.com/Cambridge-ICCS/summer-school-scientific-vis/fork">fork it</a>, make the neccessary changes to fix the problem, and then open a pull request back to this repository clerly describing the changes you have made. We will then preform a review and merge once ready.</p>
+<p>If you would like support using these materials, adapting them to your needs, or delivering them please get in touch either via GitHub or via <a href="https://github.com/Cambridge-ICCS">ICCS</a>.</p>
 </section>
 </section>
 
