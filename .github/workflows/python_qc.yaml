@@ -1,0 +1,32 @@
+name: lint
+
+on:
+  # run on every push to main
+  push:
+    branches:
+    - main
+  # run on every push (not commit) to a PR, plus open/reopen
+  pull_request:
+    types:
+    - synchronize
+    - opened
+    - reopened
+
+jobs:
+  various:
+    name: various (ruff formatting, ruff linting)
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - run: pip install ruff
+
+    # annotate each step with `if: always` to run all regardless
+    - name: Check code formatting with ruff
+      if: always()
+      run: ruff format --diff ./
+    - name: Lint with ruff using pyproject.toml configuration
+      if: always()
+      run: ruff check ./

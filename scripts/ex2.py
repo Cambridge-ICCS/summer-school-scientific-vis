@@ -1,15 +1,19 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+"""Script containing code for exercise 2."""
 
-# Function to generate synthetic ocean current data
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import animation
+
+
 def generate_synthetic_ocean_current_data(num_frames, nx, ny):
+    """Generate synthetic ocean current data."""
     data = []
     for t in range(num_frames):
         u = np.sin(2 * np.pi * (np.linspace(0, 1, nx)[:, None] + t / num_frames)) * 2
         v = np.cos(2 * np.pi * (np.linspace(0, 1, ny)[None, :] + t / num_frames)) * 2
         data.append((u, v))
     return data
+
 
 # Parameters
 num_frames = 60
@@ -20,7 +24,8 @@ num_particles = 200
 ocean_current_data = generate_synthetic_ocean_current_data(num_frames, nx, ny)
 
 # Initialize particle positions
-particle_positions = np.random.rand(num_particles, 2)
+rng = np.random.default_rng()
+particle_positions = rng.random((num_particles, 2))
 particle_positions[:, 0] *= nx
 particle_positions[:, 1] *= ny
 
@@ -28,10 +33,13 @@ particle_positions[:, 1] *= ny
 fig, ax = plt.subplots()
 ax.set_xlim(0, nx)
 ax.set_ylim(0, ny)
-particles, = ax.plot(particle_positions[:, 0], particle_positions[:, 1], 'bo', markersize=2)
+(particles,) = ax.plot(
+    particle_positions[:, 0], particle_positions[:, 1], "bo", markersize=2
+)
 
-# Function to update particle positions for animation
+
 def update_particles(frame):
+    """Update particle positions for animation."""
     u, v = ocean_current_data[frame]
     for i in range(num_particles):
         x = int(particle_positions[i, 0]) % nx
@@ -41,10 +49,13 @@ def update_particles(frame):
         particle_positions[i, 0] %= nx
         particle_positions[i, 1] %= ny
     particles.set_data(particle_positions[:, 0], particle_positions[:, 1])
-    return particles,
+    return (particles,)
+
 
 # Create animation
-ani = animation.FuncAnimation(fig, update_particles, frames=num_frames, interval=100, blit=True)
+ani = animation.FuncAnimation(
+    fig, update_particles, frames=num_frames, interval=100, blit=True
+)
 
 # Show animation
 plt.show()

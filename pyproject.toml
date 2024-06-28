@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools >= 61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scientific-visualisation"
+version = "0.0.1"
+description = "A scientific visualisation workshop focussing on geoscience."
+authors = [
+  { name="Jack Atkinson", email="jack.atkinson1000@gmail.com" },
+  { name="James Emberton", email="je484@cam.ac.uk" },
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "jupyter",
+    "numpy>=1.20.0,<2.0",
+    "netcdf4",
+    "matplotlib",
+    "cartopy",
+    "xarray",
+    "scipy",
+]
+
+[project.optional-dependencies]
+lint = [
+    "ruff>=0.3.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Cambridge-ICCS/summer-school-scientific-vis"
+"Bug Tracker" = "https://github.com/Cambridge-ICCS/summer-school-scientific-vis/issues"
+"Documentation" = "https://github.com/Cambridge-ICCS/summer-school-scientific-vis"
+"Repository" = "https://github.com/Cambridge-ICCS/summer-school-scientific-vis"
+
+[tool.setuptools]
+# By default, include-package-data is true in pyproject.toml, so you do
+# NOT have to specify this line.
+package-dir = {}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]  # list of folders that contain the packages (["."] by default)
+namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+
+
+[tool.ruff]
+# Run linting and formatting on notebooks
+extend-include = ["*.ipynb"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+# See https://docs.astral.sh/ruff/rules for full details of each ruleset.
+
+# Enable:  D: `pydocstyle`, PL: `pylint`, I: `isort`, W: `pycodestyle whitespace`
+#          NPY: `numpy`, FLY: `flynt`, RUF: `ruff`
+#          From flake8: "ARG", "SLF", "S", "BLE", "B", "A", "C4", "EM", "ICN",
+#                       "PIE", "Q", "RSE", "SIM", "TID"
+select = ["D", "PL", "I", "E", "W", "NPY", "FLY", "RUF",
+          "ARG", "SLF", "S", "BLE","B", "A", "C4", "EM", "ICN", "PIE", "Q", "RSE",
+          "SIM", "TID"]
+
+# Enable D417 (Missing argument description) on top of the NumPy convention.
+extend-select = ["D417"]
+
+# Ignore SIM108 (use ternary instead of if-else) as I think it can obscure intent.
+# Ignore RUF002 (ambiguous characters) as it does not allow apostrophes in strings.
+# Ignore PLR2004 (magic values) as we use them sensibly in science
+ignore = ["SIM108", "RUF002", "PLR2004"]
+
+[tool.ruff.lint.pydocstyle]
+# Use NumPy convention for checking docstrings
+convention = "numpy"
