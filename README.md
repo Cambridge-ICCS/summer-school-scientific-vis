@@ -85,7 +85,7 @@ To build them run:
 ```
 quarto render Scientific_Vis.qmd 
 ```
-from this directory and inspect the output .html file.
+from the `presentation/` directory and inspect the output .html file (assuming you have [Quarto](https://quarto.org/) installed on your machine ).
 
 
 ## Installation and setup
