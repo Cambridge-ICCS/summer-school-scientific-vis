@@ -10,7 +10,7 @@
 This repository contains documentation, resources, and code for the Scientific Visualisation with matplotlib session designed and delivered by [Jack Atkinson](https://jackatkinson.net/) ([**@jatkinson1000**](https://github.com/jatkinson1000))
 and James Emberton ([**@j-emberton**](https://github.com/j-emberton)) of [ICCS](https://github.com/Cambridge-ICCS).  
 This material was originally prepared for the [ICCS](https://iccs.cam.ac.uk/events/iccs-summer-school-2024) 2024 summer school.  
-All materials, including slides and videos, are available such that individuals can cover the course in their own time.
+All materials, including slides and workbooks, are available such that individuals can cover the course in their own time.
 
 ## Contents
 
