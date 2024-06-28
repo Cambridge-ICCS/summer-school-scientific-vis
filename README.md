@@ -27,11 +27,11 @@ The key learning objective from this workshop is to build skills in scientific v
 
 However, more specifically we aim to:
 
-summarise key considerations when visualising scientific data,
-provide an understanding of the Matplotlib package and how to use it effectively,
-introduce the Cartopy package and show how it extends Matplotlib functionality for geospatial plotting,
-introduce common climate data formats and show how these can be parsed to generate plottable data,
-and encourage good research software engineering (RSE) practice while using code to generate scientific visualisations.
+- summarise key considerations when visualising scientific data,
+- provide an understanding of the Matplotlib package and how to use it effectively,
+- introduce the Cartopy package and show how it extends Matplotlib functionality for geospatial plotting,
+- introduce common climate data formats and show how these can be parsed to generate plottable data, and
+- encourage good research software engineering (RSE) practice while using code to generate scientific visualisations.
 
 # Teaching material
 
