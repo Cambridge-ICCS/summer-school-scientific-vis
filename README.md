@@ -122,7 +122,7 @@ fork for future reference.
 #### 2. Create a virtual environment
 Before installing any Python packages it is important to first create a Python virtual environment.
 This provides an insulated environment inside which we can install Python packages 
-without polluting the operating systems' Python environment.
+without polluting the operating system's Python environment.
 
 If you have never done this before don't worry: it is *very* good practise, especially 
 when you are working on multiple projects, and easy to do.
