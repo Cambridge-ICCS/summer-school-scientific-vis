@@ -8,6 +8,7 @@ authors:
   - name: Jack Atkinson
     orcid: 0000-0001-5001-4812
     affiliations: ICCS - University of Cambridge
+bibliography: references.bib
 format: 
   revealjs:
     title-slide-attributes: 
@@ -290,3 +291,9 @@ Get in touch:
 {{< fa brands mastodon >}} \ [\@jatkinson1000\@fosstodon.org](https://fosstodon.org/@jatkinson1000)
 :::
 ::::
+
+
+## References
+
+::: {#refs}
+:::
