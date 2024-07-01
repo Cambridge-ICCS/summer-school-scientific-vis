@@ -265,6 +265,12 @@ Animating vector data: JL Ex 6
 "Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
 
 
+<!-- ============================================================================== -->
+
+{{< include _organisation.qmd >}}
+
+<!-- ============================================================================== -->
+
 ## Thanks for Listening {.smaller}
 
 :::: {.columns}
