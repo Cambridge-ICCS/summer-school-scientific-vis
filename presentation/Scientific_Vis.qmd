@@ -47,6 +47,40 @@ Principles of good visualisation\
 Working with common climate science data formats\
 Animating data
 
+## Different approaches to the same data
+
+:::: {.columns}
+
+::: {.column}
+![Figure SPM.8 in IPCC, 2021](images/ICC_2021.png)
+:::
+
+::: {.column}
+![](images/BBC_ICC_2021.png)
+:::
+
+::::
+BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
+
+## Different approaches to the same data
+
+:::: {.columns}
+
+::: {.column}
+![Figure SPM.1 in IPCC, 2021](images/ICC_2021_FigSPM1.png)
+:::
+
+::: {.column}
+![Guardian 2023](images/ICC_2021_Guardian.png)
+:::
+
+::: {.column}
+![WDR](images/ICC_2021_WDR.png)
+:::
+
+::::
+BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
+
 
 
 ## Anatomy of a Matplotlib plot
