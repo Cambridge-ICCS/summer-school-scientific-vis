@@ -62,6 +62,26 @@ Animating data
 ::::
 BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
 
+## An example of a bad scientific plot
+
+:::: {.columns}
+
+::: {.column}
+![](images/null.png){width=120%}
+:::
+
+::: {.column}
+Problems
+
+1. Double y-axis
+2. Inverted left y-axis
+3. Y-axis don't start at zero
+3. Different axis scales on plots for comparison
+4. Different x-axis category orders
+
+:::
+::::
+
 ## Different approaches to the same data
 
 :::: {.columns}
