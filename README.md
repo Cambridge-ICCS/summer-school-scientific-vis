@@ -90,18 +90,7 @@ from the `presentation/` directory and inspect the output .html file (assuming y
 
 ## Installation and setup
 
-There are three options for participating in this workshop for which instructions are provided below:
-
-* via a [local install](#local-install)
-* on [Google Colab](#google-colab)
-* on [binder](#binder)
-
-We recommend the [local install](#local-install) approach, especially if you forked
-the repository, as it is the easiest way to keep a copy of your work and push back to GitHub.
-
-However, if you experience issues with the installation process or are unfamiliar with
-the terminal/installation process there is the option to run the notebooks in
-[Google Colab](#google-colab) or on [binder](#binder).
+Local install is the current preferred approach to access these teaching materials, however Google CoLab and Binder options may follow in future updates.
 
 ### Local Install
 
