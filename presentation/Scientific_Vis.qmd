@@ -262,3 +262,31 @@ Animating vector data: JL Ex 6
 \
 
 "Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
+
+
+## Thanks for Listening {.smaller}
+
+:::: {.columns}
+
+::: {.column width="20%"}
+Get in touch:
+:::
+::: {.column width="35%"}
+{{< fa pencil >}} \ James Emberton
+
+{{< fa solid envelope >}} \ [je484[AT]cam.ac.uk](mailto:je484@cam.ac.uk)
+
+{{< fa brands github >}} \ [j-emberton](https://github.com/j-emberton)
+:::
+::: {.column width="45%"}
+{{< fa pencil >}} \ Jack Atkinson
+
+{{< fa solid envelope >}} \ [jwa34[AT]cam.ac.uk](mailto:jwa34@cam.ac.uk)
+
+{{< fa brands github >}} \ [jatkinson1000](https://github.com/jatkinson1000)
+
+{{< fa solid globe >}} \ [jackatkinson.net](https://jackatkinson.net)
+
+{{< fa brands mastodon >}} \ [\@jatkinson1000\@fosstodon.org](https://fosstodon.org/@jatkinson1000)
+:::
+::::
