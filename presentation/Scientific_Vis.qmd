@@ -66,12 +66,17 @@ BBC replotted ICC 2021 report data for a different audience. Plot adds colour an
 
 :::: {.columns}
 
-::: {.column}
+::: {.column width=50%}
 ![](images/null.png){width=120%}
 :::
 
 ::: {.column}
-Problems
+Objective:
+
+Compare p-value and variance data for two populations highlighting statistical differences between different factors
+
+
+Problems:
 
 1. Double y-axis
 2. Inverted left y-axis
