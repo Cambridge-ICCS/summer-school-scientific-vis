@@ -29,18 +29,6 @@ format:
 jupyter: python3
 ---
 
-## 
-
-\
-
-"The greatest value of a picture is when it forces us to notice what we never expected to see." — John W. Tukey
-
-\
-
-"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
-
-
-
 ## Summary
 
 Principles of good visualisation\
@@ -192,3 +180,14 @@ Feature maps
 ## Using Features and Projections in Cartopy
 
 ![](images/cartopy_projection_netcdf.png){height=450}
+
+
+## 
+
+\
+
+"The greatest value of a picture is when it forces us to notice what we never expected to see." — John W. Tukey
+
+\
+
+"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
