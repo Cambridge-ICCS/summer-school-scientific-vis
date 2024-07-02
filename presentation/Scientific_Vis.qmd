@@ -47,6 +47,14 @@ Principles of good visualisation\
 Working with common climate science data formats\
 Animating data
 
+## Learning Outcomes
+
+1. Tailor your visualisations to your audience
+2. Avoid plotting bad habits 
+3. Coding best practices for good plots
+4. How to use colour to best effect
+5. Fundamentals of Matplotlib
+6. Geospatial plotting with Cartopy
 
 
 ## Anatomy of a Matplotlib plot
