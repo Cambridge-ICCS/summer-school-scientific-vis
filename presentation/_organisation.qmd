@@ -13,8 +13,14 @@ and tears later.
 If you have repeated code consider using:
 
 - loops
-- functions/subroutines 
+- functions/subroutines
+  - Make axis a parameter of the function
 
+Other advice:
+
+- Keep (post-)processing of data separate to plotting
+  e.g. `calclulate_vorticity()` and `plot_vorticity()` routines.
+- When designing functions think about breaking them up according to the matplotlib 'anatomy'
 
 
 ## Easy adaptation
@@ -63,6 +69,12 @@ for axis in ax.ravel():
 ::::
 
 
+## Easy adaptation
+
+The `**kwargs` functionality can be used to grab any keyword arguments and wrap them
+into a dictionary to be passed through wrapper functions.
+
+
 ## Reuse in future
 
 Consider breaking commonly used but verbose routines down into further subsections
@@ -75,5 +87,6 @@ matplotlib or cartopy functions.
 ```python
 import my_plotting_lib as myplot
 
+...
 ...
 ```
