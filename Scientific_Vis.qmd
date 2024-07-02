@@ -29,24 +29,32 @@ format:
 jupyter: python3
 ---
 
-## 
-
-\
-
-"The greatest value of a picture is when it forces us to notice what we never expected to see." — John W. Tukey
-
-\
-
-"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
-
-
-
 ## Summary
 
+Discuss examples of good and bad visualisations \
 Principles of good visualisation\
-Working with common climate science data formats\
-Animating data
+Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook\
+\
+Part theory, part practical
 
+## Learning Outcomes
+
+1. Tailor your visualisations to your audience
+2. Avoid plotting bad habits 
+3. Reinforce coding best practices
+4. How to use colour to best effect
+5. Fundamentals of Matplotlib - plots and animations
+6. Explore Cartopy
+
+## Setup
+
+Navigate to:\
+\
+https://github.com/Cambridge-ICCS/summer-school-scientific-vis\
+\
+and follow installation instructions in the README.
+\
+This Github repo contains this presenation as an `html` file, and the jupyter notebook.
 
 
 ## Anatomy of a Matplotlib plot
@@ -184,3 +192,22 @@ Feature maps
 ## Using Features and Projections in Cartopy
 
 ![](images/cartopy_projection_netcdf.png){height=450}
+
+## Learning Outcomes
+
+1. Tailor your visualisations to your audience
+2. Avoid plotting bad habits 
+3. Coding best practices for good plots
+4. How to use colour to best effect
+5. Fundamentals of Matplotlib - plots and animations
+6. Explore Cartopy
+
+## 
+
+\
+
+"The greatest value of a picture is when it forces us to notice what we never expected to see." — John W. Tukey
+
+\
+
+"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath

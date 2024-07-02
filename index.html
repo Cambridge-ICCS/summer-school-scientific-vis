@@ -8,7 +8,7 @@
 <link href="Scientific_Vis_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Scientific_Vis_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="Scientific_Vis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.557">
+  <meta name="generator" content="quarto-1.5.52">
 
   <title>Scientific visualisation with Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -413,20 +413,33 @@ Jack Atkinson <a href="https://orcid.org/0000-0001-5001-4812" class="quarto-titl
 </div>
 
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p><br>
-</p>
-<p>“The greatest value of a picture is when it forces us to notice what we never expected to see.” — John W. Tukey</p>
-<p><br>
-</p>
-<p>“Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful.” — Chip &amp; Dan Heath</p>
-</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
-<p>Principles of good visualisation<br>
-Working with common climate science data formats<br>
-Animating data</p>
+<p>Discuss examples of good and bad visualisations<br>
+Principles of good visualisation<br>
+Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook<br>
+<br>
+Part theory, part practical</p>
+</section>
+<section id="learning-outcomes" class="slide level2 scrollable">
+<h2>Learning Outcomes</h2>
+<ol type="1">
+<li class="fragment">Tailor your visualisations to your audience</li>
+<li class="fragment">Avoid plotting bad habits</li>
+<li class="fragment">Reinforce coding best practices</li>
+<li class="fragment">How to use colour to best effect</li>
+<li class="fragment">Fundamentals of Matplotlib - plots and animations</li>
+<li class="fragment">Explore Cartopy</li>
+</ol>
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<p>Navigate to:<br>
+<br>
+https://github.com/Cambridge-ICCS/summer-school-scientific-vis<br>
+<br>
+and follow installation instructions in the README.<br>
+This Github repo contains this presenation as an <code>html</code> file, and the jupyter notebook.</p>
 </section>
 <section id="anatomy-of-a-matplotlib-plot" class="slide level2">
 <h2>Anatomy of a Matplotlib plot</h2>
@@ -438,8 +451,7 @@ Animating data</p>
 <p>‘Axes’ is the part of the Figure where information is added</p>
 <p>‘Artist’ is the base class for all elements that can be added to the axes - 2D line, patch, text</p>
 <p>‘Axis’ is the x- or y-axis (not to be confused with axes)</p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="the-matplotlib-interface" class="slide level2">
 <h2>The Matplotlib interface</h2>
@@ -473,8 +485,7 @@ Animating data</p>
 <span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
 <span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-14"><a href="" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+</div></div>
 <p>Plain Pyplot is a simplified interface for quick plotting</p>
 <p>Explicit approach allows advanced plot customsiation.</p>
 </section>
@@ -486,8 +497,7 @@ Animating data</p>
 <p><img data-src="images/plt_annot.png" width="350"></p>
 </div><div class="column">
 <p><img data-src="images/plt_dates.png" width="350"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="plotting-netcdf-data-with-basic-matplotlib-commands-jupyter-lab-exercise-2" class="slide level2">
 <h2>Plotting NetCDF data with basic Matplotlib commands: Jupyter Lab Exercise 2</h2>
@@ -505,8 +515,7 @@ Animating data</p>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/cartopy_image.png" height="300"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="examples-of-cartopy-features-jupyter-lab-exercise-4" class="slide level2">
 <h2>Examples of Cartopy features: Jupyter Lab Exercise 4</h2>
@@ -522,12 +531,31 @@ Animating data</p>
 </div><div class="column">
 <p>Feature maps</p>
 <p><img data-src="images/Cartopy_features.png" width="300"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="using-features-and-projections-in-cartopy" class="slide level2">
 <h2>Using Features and Projections in Cartopy</h2>
 <p><img data-src="images/cartopy_projection_netcdf.png" height="450"></p>
+</section>
+<section id="learning-outcomes-1" class="slide level2 scrollable">
+<h2>Learning Outcomes</h2>
+<ol type="1">
+<li class="fragment">Tailor your visualisations to your audience</li>
+<li class="fragment">Avoid plotting bad habits</li>
+<li class="fragment">Coding best practices for good plots</li>
+<li class="fragment">How to use colour to best effect</li>
+<li class="fragment">Fundamentals of Matplotlib - plots and animations</li>
+<li class="fragment">Explore Cartopy</li>
+</ol>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><br>
+</p>
+<p>“The greatest value of a picture is when it forces us to notice what we never expected to see.” — John W. Tukey</p>
+<p><br>
+</p>
+<p>“Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful.” — Chip &amp; Dan Heath</p>
 <div class="quarto-auto-generated-content">
 <p><img src="https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/iccs_ucam_combined_reverse_colour.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -777,18 +805,7 @@ Animating data</p>
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -820,7 +837,29 @@ Animating data</p>
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -828,7 +867,7 @@ Animating data</p>
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
