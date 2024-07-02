@@ -41,8 +41,8 @@ Animating data
 2. Avoid plotting bad habits 
 3. Coding best practices for good plots
 4. How to use colour to best effect
-5. Fundamentals of Matplotlib
-6. Geospatial plotting with Cartopy
+5. Fundamentals of Matplotlib - plots and animations
+6. Explore Cartopy
 
 
 ## Anatomy of a Matplotlib plot
@@ -181,6 +181,14 @@ Feature maps
 
 ![](images/cartopy_projection_netcdf.png){height=450}
 
+## Learning Outcomes
+
+1. Tailor your visualisations to your audience
+2. Avoid plotting bad habits 
+3. Coding best practices for good plots
+4. How to use colour to best effect
+5. Fundamentals of Matplotlib - plots and animations
+6. Explore Cartopy
 
 ## 
 
