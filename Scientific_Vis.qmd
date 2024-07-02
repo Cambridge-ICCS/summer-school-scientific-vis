@@ -56,6 +56,67 @@ and follow installation instructions in the README.
 \
 This Github repo contains this presenation as an `html` file, and the jupyter notebook.
 
+## An example of a bad scientific plot
+
+:::: {.columns}
+
+::: {.column width=50%}
+![](images/bad_plot.png){width=120%}
+:::
+
+::: {.column}
+Objective:
+
+Compare p-value and variance data for two populations highlighting statistical differences between different factors
+
+
+Problems:
+
+1. Double y-axis
+2. Inverted left y-axis
+3. Y-axis don't start at zero
+3. Different axis scales on plots for comparison
+4. Different x-axis category orders
+
+:::
+::::
+
+Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma. Nat Med 28, 535–544 (2022). https://doi.org/10.1038/s41591-022-01695-5
+
+## Different approaches to the same data
+
+:::: {.columns}
+
+::: {.column}
+![Figure SPM.8 in IPCC, 2021](images/ICC_2021.png)
+:::
+
+::: {.column}
+![](images/BBC_ICC_2021.png)
+:::
+
+::::
+BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
+
+## Different approaches to the same data
+
+:::: {.columns}
+
+::: {.column}
+![Figure SPM.1 in IPCC, 2021](images/ICC_2021_FigSPM1.png)
+:::
+
+::: {.column}
+![Guardian 2023](images/ICC_2021_Guardian.png)
+:::
+
+::: {.column}
+![WDR](images/ICC_2021_WDR.png)
+:::
+
+::::
+BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
+
 
 ## Anatomy of a Matplotlib plot
 
