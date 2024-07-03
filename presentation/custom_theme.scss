@@ -47,3 +47,7 @@
   height: 90%;
 }
 
+/*-- standard offset for text on content slides --*/
+.reveal .slides > section:not(#title-slide) {
+  padding-top: 50px; /* Adjust the value as needed */
+}
