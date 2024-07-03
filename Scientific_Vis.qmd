@@ -19,7 +19,7 @@ format:
     smaller: true
     highlight-style: a11y
     code-line-numbers: false
-    scrollable: true
+    scrollable: false
     auto-stretch: false
     # parallax-background-image: images/ICCS_content_slide.png
     # parallax-background-size: 110%
