@@ -8,7 +8,7 @@
 <link href="Scientific_Vis_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Scientific_Vis_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="Scientific_Vis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.53">
+  <meta name="generator" content="quarto-1.5.54">
 
   <title>Scientific visualisation with Python</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -414,11 +414,16 @@ Jack Atkinson <a href="https://orcid.org/0000-0001-5001-4812" class="quarto-titl
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
-<p>Discuss examples of good and bad visualisations<br>
-Principles of good visualisation<br>
-Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook<br>
+<ul>
+<li class="fragment">Discuss examples of good and bad visualisations<br>
+</li>
+<li class="fragment">Principles of good visualisation<br>
+</li>
+<li class="fragment">Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook<br>
 <br>
-Part theory, part practical</p>
+</li>
+<li class="fragment">Part theory, part practical</li>
+</ul>
 </section>
 <section id="learning-outcomes" class="slide level2">
 <h2>Learning Outcomes</h2>
@@ -438,7 +443,8 @@ Part theory, part practical</p>
 https://github.com/Cambridge-ICCS/summer-school-scientific-vis<br>
 <br>
 and follow installation instructions in the README.<br>
-This Github repo contains this presenation as an <code>html</code> file, and the jupyter notebook.</p>
+This Github repo contains this presenation as an <code>html</code> file, and the jupyter notebook.<br>
+Launch Jupyter notebook from terminal - navigate to notebook directory - $jupyter notebook</p>
 </section>
 <section id="an-example-of-a-bad-scientific-plot" class="slide level2">
 <h2>An example of a bad scientific plot</h2>
@@ -472,34 +478,7 @@ This Github repo contains this presenation as an <code>html</code> file, and the
 </div><div class="column">
 <p><img data-src="images/BBC_ICC_2021.png"></p>
 </div></div>
-<p>BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.</p>
-</section>
-<section id="different-approaches-to-the-same-data-1" class="slide level2">
-<h2>Different approaches to the same data</h2>
-<div class="columns">
-<div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/ICC_2021_FigSPM1.png"></p>
-<figcaption>Figure SPM.1 in IPCC, 2021</figcaption>
-</figure>
-</div>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/ICC_2021_Guardian.png"></p>
-<figcaption>Guardian 2023</figcaption>
-</figure>
-</div>
-</div><div class="column">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/ICC_2021_WDR.png"></p>
-<figcaption>WDR</figcaption>
-</figure>
-</div>
-</div></div>
-<p>BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.</p>
+<p>BBC replotted IPCC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.</p>
 </section>
 <section id="anatomy-of-a-matplotlib-plot" class="slide level2">
 <h2>Anatomy of a Matplotlib plot</h2>
@@ -547,10 +526,10 @@ This Github repo contains this presenation as an <code>html</code> file, and the
 <span id="cb2-14"><a href="" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
 <p>Plain Pyplot is a simplified interface for quick plotting</p>
-<p>Explicit approach allows advanced plot customsiation.</p>
+<p>Explicit approach using an object oriented interface allows advanced plot customsiation.</p>
 </section>
-<section id="matplotlib-customisations-jupyter-lab-exercise-1" class="slide level2">
-<h2>Matplotlib customisations: Jupyter Lab Exercise 1</h2>
+<section id="matplotlib-customisations-jl-ex-1" class="slide level2">
+<h2>Matplotlib customisations: JL Ex 1</h2>
 <div class="columns">
 <div class="column">
 <p><img data-src="images/plt_inset.png" width="350"></p>
@@ -559,8 +538,8 @@ This Github repo contains this presenation as an <code>html</code> file, and the
 <p><img data-src="images/plt_dates.png" width="350"></p>
 </div></div>
 </section>
-<section id="plotting-netcdf-data-with-basic-matplotlib-commands-jupyter-lab-exercise-2" class="slide level2">
-<h2>Plotting NetCDF data with basic Matplotlib commands: Jupyter Lab Exercise 2</h2>
+<section id="plotting-netcdf-data-with-basic-matplotlib-jl-ex-2" class="slide level2">
+<h2>Plotting NetCDF data with basic Matplotlib: JL Ex 2</h2>
 <p><img data-src="images/plt_netcdf.png" height="500"></p>
 </section>
 <section id="introduction-to-cartopy" class="slide level2">
@@ -577,8 +556,8 @@ This Github repo contains this presenation as an <code>html</code> file, and the
 <p><img data-src="images/cartopy_image.png" height="300"></p>
 </div></div>
 </section>
-<section id="examples-of-cartopy-features-jupyter-lab-exercise-4" class="slide level2">
-<h2>Examples of Cartopy features: Jupyter Lab Exercise 4</h2>
+<section id="examples-of-cartopy-features-jl-ex-3" class="slide level2">
+<h2>Examples of Cartopy features: JL Ex 3</h2>
 <div class="columns">
 <div class="column">
 <p>Geographic maps</p>
@@ -593,9 +572,14 @@ This Github repo contains this presenation as an <code>html</code> file, and the
 <p><img data-src="images/Cartopy_features.png" width="300"></p>
 </div></div>
 </section>
-<section id="using-features-and-projections-in-cartopy" class="slide level2">
-<h2>Using Features and Projections in Cartopy</h2>
-<p><img data-src="images/cartopy_projection_netcdf.png" height="450"></p>
+<section id="using-features-and-projections-in-cartopy-jl-ex-4" class="slide level2">
+<h2>Using Features and Projections in Cartopy: JL Ex 4</h2>
+<p><img data-src="images/cartopy_projection_netcdf.png" height="400"></p>
+</section>
+<section id="visualising-vector-data" class="slide level2">
+<h2>Visualising vector data</h2>
+<p>Plotting vector data: JL Ex 5<br>
+Animating vector data: JL Ex 6</p>
 </section>
 <section id="learning-outcomes-1" class="slide level2">
 <h2>Learning Outcomes</h2>

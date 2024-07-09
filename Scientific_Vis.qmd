@@ -31,11 +31,11 @@ jupyter: python3
 
 ## Summary
 
-Discuss examples of good and bad visualisations \
-Principles of good visualisation\
-Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook\
+- Discuss examples of good and bad visualisations \
+- Principles of good visualisation\
+- Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook\
 \
-Part theory, part practical
+- Part theory, part practical
 
 ## Learning Outcomes
 
@@ -55,6 +55,10 @@ https://github.com/Cambridge-ICCS/summer-school-scientific-vis\
 and follow installation instructions in the README.
 \
 This Github repo contains this presenation as an `html` file, and the jupyter notebook.
+\
+Launch Jupyter notebook from terminal
+- navigate to notebook directory
+- $jupyter notebook
 
 ## An example of a bad scientific plot
 
@@ -96,26 +100,7 @@ Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associat
 :::
 
 ::::
-BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
-
-## Different approaches to the same data
-
-:::: {.columns}
-
-::: {.column}
-![Figure SPM.1 in IPCC, 2021](images/ICC_2021_FigSPM1.png)
-:::
-
-::: {.column}
-![Guardian 2023](images/ICC_2021_Guardian.png)
-:::
-
-::: {.column}
-![WDR](images/ICC_2021_WDR.png)
-:::
-
-::::
-BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
+BBC replotted IPCC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
 
 
 ## Anatomy of a Matplotlib plot
@@ -185,11 +170,11 @@ plt.show()
 
 Plain Pyplot is a simplified interface for quick plotting
 
-Explicit approach allows advanced plot customsiation.
+Explicit approach using an object oriented interface allows advanced plot customsiation.
 
 
 
-## Matplotlib customisations: Jupyter Lab Exercise 1
+## Matplotlib customisations: JL Ex 1
 
 :::: {.columns}
 ::: {.column}
@@ -206,10 +191,9 @@ Explicit approach allows advanced plot customsiation.
 
 
 
-## Plotting NetCDF data with basic Matplotlib commands: Jupyter Lab Exercise 2
+## Plotting NetCDF data with basic Matplotlib: JL Ex 2
 
 ![](images/plt_netcdf.png){height=500}
-
 
 
 ## Introduction to Cartopy
@@ -229,7 +213,7 @@ Explicit approach allows advanced plot customsiation.
 
 
 
-## Examples of Cartopy features: Jupyter Lab Exercise 4
+## Examples of Cartopy features: JL Ex 3
 
 :::: {.columns}
 ::: {.column}
@@ -250,9 +234,15 @@ Feature maps
 
 
 
-## Using Features and Projections in Cartopy
+## Using Features and Projections in Cartopy: JL Ex 4
 
-![](images/cartopy_projection_netcdf.png){height=450}
+![](images/cartopy_projection_netcdf.png){height=400}
+
+## Visualising vector data
+
+Plotting vector data: JL Ex 5
+\
+Animating vector data: JL Ex 6
 
 ## Learning Outcomes
 
