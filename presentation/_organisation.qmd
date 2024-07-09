@@ -13,14 +13,6 @@ and tears later.
 If you have repeated code consider using:
 
 - loops
-- functions/subroutines
-  - Make axis a parameter of the function
-
-Other advice:
-
-- Keep (post-)processing of data separate to plotting
-  e.g. `calclulate_vorticity()` and `plot_vorticity()` routines.
-- When designing functions think about breaking them up according to the matplotlib 'anatomy'
 
 
 ## Easy adaptation
@@ -68,21 +60,89 @@ for axis in ax.ravel():
 :::
 ::::
 
+## Easy adaptation
+
+If you have repeated code consider using:
+
+- loops
+- functions/subroutines
+  - Make axis a parameter of the function
+  - When designing functions think about breaking them up according to the matplotlib 'anatomy'
+
+```python
+import matplotlib.pyplot as plt
+
+def line_plot(axis, x, y):
+    axis.plot(x, y, c='r')
+    axis.set_xlim(0, np.max(x))
+
+...
+
+fig, ax = plt.subplots(2, 3)
+x = np.random.rand(36)
+y = np.random.rand(36,50)
+
+for i, axis in enumerate(ax.ravel()):
+    line_plot(axis, x, y[:, i])
+```
 
 ## Easy adaptation
 
-The `**kwargs` functionality can be used to grab any keyword arguments and wrap them
+If you have repeated code consider using:
+
+- loops
+- functions/subroutines
+  - Make axis a parameter of the function
+  - When designing functions think about breaking them up according to the matplotlib 'anatomy'
+- Keep (post-)processing of data separate to plotting\
+  e.g. `calclulate_vorticity()` and `plot_vorticity()` routines.
+
+
+
+## Easy adaptation
+
+The `**kwargs` functionality can be used to grab any extra keyword arguments and wrap them
 into a dictionary to be passed through wrapper functions.
+
+```{python}
+#| echo: true
+def acronym(acronym, **kwargs):
+    print(f"kwargs dictionary: {kwargs}\n")
+
+    result = acronym
+    for arg in kwargs.values():
+        result += arg
+    return result
+
+print(acronym("ICCS: ", a="Institute", b="Computing", c="Climate", d="Science"))
+```
 
 
 ## Reuse in future
 
-Consider breaking commonly used but verbose routines down into further subsections
-to create your own 'plotting library'.
+Place commonly used routines in a file to create your own 'plotting library'.
 
 This can be particularly useful if you have domain-specific adaptations to the common
-matplotlib or cartopy functions.
+matplotlib or cartopy functions, and for consistency into the future.
 
+```python
+"""my_plotting_lib.py - a collection of useful plotting routines"""
+
+def time_axis_years():
+    """Custom formatting of axis ticks in years"""
+    ...
+
+def time_axis_days():
+    """Custom formatting of axis ticks in days"""
+    ...
+
+def align_axis_x(axs, ax_target):
+    """Make x-axis of axs align with `ax_target` in figure"""
+...
+...
+```
+
+\
 
 ```python
 import my_plotting_lib as myplot
