@@ -55,6 +55,10 @@ https://github.com/Cambridge-ICCS/summer-school-scientific-vis\
 and follow installation instructions in the README.
 \
 This Github repo contains this presenation as an `html` file, and the jupyter notebook.
+\
+Launch Jupyter notebook from terminal
+- navigate to notebook directory
+- $jupyter notebook
 
 ## An example of a bad scientific plot
 
@@ -170,7 +174,7 @@ Explicit approach using an object oriented interface allows advanced plot custom
 
 
 
-## Matplotlib customisations: JL Exercise 1
+## Matplotlib customisations: JL Ex 1
 
 :::: {.columns}
 ::: {.column}
@@ -187,7 +191,7 @@ Explicit approach using an object oriented interface allows advanced plot custom
 
 
 
-## Plotting NetCDF data with basic Matplotlib: JL Exercise 2
+## Plotting NetCDF data with basic Matplotlib: JL Ex 2
 
 ![](images/plt_netcdf.png){height=500}
 
@@ -209,7 +213,7 @@ Explicit approach using an object oriented interface allows advanced plot custom
 
 
 
-## Examples of Cartopy features: JL Exercise 4
+## Examples of Cartopy features: JL Ex 3
 
 :::: {.columns}
 ::: {.column}
@@ -230,9 +234,15 @@ Feature maps
 
 
 
-## Using Features and Projections in Cartopy
+## Using Features and Projections in Cartopy: JL Ex 4
 
-![](images/cartopy_projection_netcdf.png){height=450}
+![](images/cartopy_projection_netcdf.png){height=400}
+
+## Visualising vector data
+
+Plotting vector data: JL Ex 5
+\
+Animating vector data: JL Ex 6
 
 ## Learning Outcomes
 
