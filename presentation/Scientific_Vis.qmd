@@ -31,11 +31,11 @@ jupyter: python3
 
 ## Summary
 
-Discuss examples of good and bad visualisations \
-Principles of good visualisation\
-Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook\
+- Discuss examples of good and bad visualisations \
+- Principles of good visualisation\
+- Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook\
 \
-Part theory, part practical
+- Part theory, part practical
 
 ## Learning Outcomes
 
@@ -96,26 +96,7 @@ Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associat
 :::
 
 ::::
-BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
-
-## Different approaches to the same data
-
-:::: {.columns}
-
-::: {.column}
-![Figure SPM.1 in IPCC, 2021](images/ICC_2021_FigSPM1.png)
-:::
-
-::: {.column}
-![Guardian 2023](images/ICC_2021_Guardian.png)
-:::
-
-::: {.column}
-![WDR](images/ICC_2021_WDR.png)
-:::
-
-::::
-BBC replotted ICC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
+BBC replotted IPCC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
 
 
 ## Anatomy of a Matplotlib plot
@@ -185,11 +166,11 @@ plt.show()
 
 Plain Pyplot is a simplified interface for quick plotting
 
-Explicit approach allows advanced plot customsiation.
+Explicit approach using an object oriented interface allows advanced plot customsiation.
 
 
 
-## Matplotlib customisations: Jupyter Lab Exercise 1
+## Matplotlib customisations: JL Exercise 1
 
 :::: {.columns}
 ::: {.column}
@@ -206,10 +187,9 @@ Explicit approach allows advanced plot customsiation.
 
 
 
-## Plotting NetCDF data with basic Matplotlib commands: Jupyter Lab Exercise 2
+## Plotting NetCDF data with basic Matplotlib: JL Exercise 2
 
 ![](images/plt_netcdf.png){height=500}
-
 
 
 ## Introduction to Cartopy
@@ -229,7 +209,7 @@ Explicit approach allows advanced plot customsiation.
 
 
 
-## Examples of Cartopy features: Jupyter Lab Exercise 4
+## Examples of Cartopy features: JL Exercise 4
 
 :::: {.columns}
 ::: {.column}
