@@ -246,6 +246,17 @@ Plotting vector data: JL Ex 5
 \
 Animating vector data: JL Ex 6
 
+<!-- ============================================================================== -->
+
+{{< include _organisation.qmd >}}
+
+<!-- ============================================================================== -->
+
+{{< include _colormaps.qmd >}}
+
+<!-- ============================================================================== -->
+
+
 ## Learning Outcomes
 
 1. Tailor your visualisations to your audience
@@ -265,16 +276,6 @@ Animating vector data: JL Ex 6
 
 "Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
 
-
-<!-- ============================================================================== -->
-
-{{< include _organisation.qmd >}}
-
-<!-- ============================================================================== -->
-
-{{< include _colormaps.qmd >}}
-
-<!-- ============================================================================== -->
 
 ## Thanks for Listening {.smaller}
 
