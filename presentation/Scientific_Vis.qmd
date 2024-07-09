@@ -15,7 +15,6 @@ format:
       data-background-image: images/ICCS_title_slide.png
     theme: custom_theme.scss
     embed-resources: false
-    incremental: true
     history: false
     smaller: true
     highlight-style: a11y
@@ -27,6 +26,8 @@ format:
     # parallax-background-horizontal: 0
     # margin: 0.25
     logo: https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/iccs_ucam_combined_reverse_colour.png
+revealjs-plugins:
+  - attribution
 jupyter: python3
 ---
 
@@ -271,6 +272,10 @@ Animating vector data: JL Ex 6
 
 <!-- ============================================================================== -->
 
+{{< include _colormaps.qmd >}}
+
+<!-- ============================================================================== -->
+
 ## Thanks for Listening {.smaller}
 
 :::: {.columns}
@@ -301,5 +306,9 @@ Get in touch:
 
 ## References
 
+---
+nocite: |
+  @*
+---
 ::: {#refs}
 :::

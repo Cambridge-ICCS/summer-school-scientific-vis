@@ -1,0 +1,71 @@
+# Colormaps
+
+
+## Some Science
+
+Colour can be defined by two things:
+
+- luminosity ()
+- hue or tint (the 'colour')
+
+In the eye these are processed by different cells:
+
+- rod cells process achromaticity (greyscale)
+- cone cells process hue
+  - 2/3 of cells process longer wavelengths giving better perception across warmer colors
+  - colour vision deficiency is usually an abnornality in one or more types of cone cell
+  - The most common CVD is red-green dichromatism (M-cone cell)
+
+
+## Interpretability and colourblindness
+
+Grayscale conversion
+https://matplotlib.org/stable/users/explain/colors/colormaps.html#grayscale-conversion
+
+Consider types of colormap in terms of luminosity:
+
+- Uniform
+- Sequential
+- Cyclic
+
+
+## What we see
+
+![](https://i0.wp.com/eos.org/wp-content/uploads/2020/05/desaturated-rainbow-specialized-colormap-ocean-eddies.png)
+
+:::{.attribution}
+
+:::
+
+
+## Scientific danger
+
+The larger danger is that by using 'artificial' colourmaps information is not seen, or worse
+misinterpreted due to artifacts.
+
+![](https://i0.wp.com/eos.org/wp-content/uploads/2020/05/comparison-rainbow-cool-warm-wave-colormaps.png)
+
+:::{.attribution}
+
+:::
+
+
+## Improving data visualisation
+
+- Try a few colormaps when plotting
+
+- Sometimes we need to stretch/compress regions of the colormap to suit our data
+![](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*ZjIfqcx8MCEc-JCLv33PKw.png){width=100%}
+
+:::{.attribution}
+Australian population by [@halupka2020beautiful]
+:::
+
+## cmocean
+
+
+## Custom color maps
+
+
+
+## other
