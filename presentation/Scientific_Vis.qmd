@@ -87,7 +87,11 @@ Problems:
 :::
 ::::
 
-Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma. Nat Med 28, 535–544 (2022). https://doi.org/10.1038/s41591-022-01695-5
+:::{.attribution}
+Nat Med 28, 535–544 (2022). [https://doi.org/10.1038/s41591-022-01695-5](https://doi.org/10.1038/s41591-022-01695-5)\
+Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma.\
+Lee, K.A., Thomas, A.M., Bolte, L.A. et al.
+:::
 
 ## Different approaches to the same data
 
@@ -102,8 +106,14 @@ Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associat
 :::
 
 ::::
-BBC replotted IPCC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
 
+:::{.attribution}
+Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.\
+BBC replotted IPCC 2021 report data for a different audience.
+:::
+
+
+# Let's get plotting
 
 ## Anatomy of a Matplotlib plot
 
