@@ -1,0 +1,154 @@
+# Code organisation
+
+## Plotting code is code {.smaller}
+
+Plotting is often done using scripts with a eagerness for seeing the results.
+
+However, plotting code is still code and treating it as such can save time
+and tears later.
+
+
+## Easy adaptation
+
+If you have repeated code consider using:
+
+- loops
+
+
+## Easy adaptation
+
+The `numpy.ravel()` function can be particularly useful for flattening multi-dimensional
+`ax` arrays.
+
+::::{.columns}
+:::{.column width=50%}
+This is OK (1D):
+```python
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(6)
+
+for axis in ax:
+    axis.plot(...
+```
+:::
+:::{.column width=50%}
+:::
+::::
+
+::::{.columns}
+:::{.column width=50%}
+But this will fail (2D):
+```python
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(2, 3)
+
+for axis in ax:
+    axis.plot(...
+```
+:::
+:::{.column width=50%}
+:::{.fragment}
+Instead use:
+```python
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(2, 3)
+
+for axis in ax.ravel():
+    axis.plot(...
+```
+:::
+:::
+::::
+
+## Easy adaptation
+
+If you have repeated code consider using:
+
+- loops
+- functions/subroutines
+  - Make axis a parameter of the function
+  - When designing functions think about breaking them up according to the matplotlib 'anatomy'
+
+```python
+import matplotlib.pyplot as plt
+
+def line_plot(axis, x, y):
+    axis.plot(x, y, c='r')
+    axis.set_xlim(0, np.max(x))
+
+...
+
+fig, ax = plt.subplots(2, 3)
+x = np.arange(36)
+y = np.random.rand(36,50)
+
+for i, axis in enumerate(ax.ravel()):
+    line_plot(axis, x, y[:, i])
+```
+
+## Easy adaptation
+
+If you have repeated code consider using:
+
+- loops
+- functions/subroutines
+  - Make axis a parameter of the function
+  - When designing functions think about breaking them up according to the matplotlib 'anatomy'
+- Keep (post-)processing of data separate to plotting\
+  e.g. `calclulate_vorticity()` and `plot_vorticity()` routines.
+
+
+
+## Easy adaptation
+
+The `**kwargs` functionality can be used to grab any extra keyword arguments and wrap them
+into a dictionary to be passed through wrapper functions.
+
+```{python}
+#| echo: true
+def acronym(acronym, **kwargs):
+    print(f"kwargs dictionary: {kwargs}\n")
+
+    result = acronym
+    for arg in kwargs.values():
+        result += arg
+    return result
+
+print(acronym("ICCS: ", a="Institute", b="Computing", c="Climate", d="Science"))
+```
+
+
+## Reuse in future
+
+Place commonly used routines in a file to create your own 'plotting library'.
+
+This can be particularly useful if you have domain-specific adaptations to the common
+matplotlib or cartopy functions, and for consistency into the future.
+
+```python
+"""my_plotting_lib.py - a collection of useful plotting routines"""
+
+def time_axis_years():
+    """Custom formatting of axis ticks in years"""
+    ...
+
+def time_axis_days():
+    """Custom formatting of axis ticks in days"""
+    ...
+
+def align_axis_x(axs, ax_target):
+    """Make x-axis of axs align with `ax_target` in figure"""
+...
+...
+```
+
+\
+
+```python
+import my_plotting_lib as myplot
+
+...
+...
+```
+
+# JL Ex 7

@@ -7,7 +7,9 @@
 <link href="Scientific_Vis_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Scientific_Vis_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Scientific_Vis_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="Scientific_Vis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="Scientific_Vis_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Scientific_Vis_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="Scientific_Vis_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.54">
 
   <title>Scientific visualisation with Python</title>
@@ -93,11 +95,32 @@
     code span.va { color: #a55a00; } /* Variable */
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="Scientific_Vis_files/libs/revealjs/dist/theme/quarto.css">
   <link href="Scientific_Vis_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Scientific_Vis_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Scientific_Vis_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Scientific_Vis_files/libs/revealjs/plugin/reveal-attribution/attribution.css" rel="stylesheet">
   <link href="Scientific_Vis_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -412,39 +435,45 @@ Jack Atkinson <a href="https://orcid.org/0000-0001-5001-4812" class="quarto-titl
 </div>
 
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+<section id="outlook" class="slide level2">
+<h2>Outlook</h2>
 <ul>
-<li class="fragment">Discuss examples of good and bad visualisations<br>
+<li>Discuss examples of good and bad visualisations<br>
 </li>
-<li class="fragment">Principles of good visualisation<br>
+<li>Principles of good visualisation<br>
 </li>
-<li class="fragment">Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook<br>
+<li>Explore plotting with Python, Matplotlib and Cartopy in Jupyter Notebook<br>
 <br>
 </li>
-<li class="fragment">Part theory, part practical</li>
+<li>Part theory, part practical</li>
 </ul>
 </section>
 <section id="learning-outcomes" class="slide level2">
 <h2>Learning Outcomes</h2>
 <ol type="1">
-<li class="fragment">Tailor your visualisations to your audience</li>
-<li class="fragment">Avoid plotting bad habits</li>
-<li class="fragment">Reinforce coding best practices</li>
-<li class="fragment">How to use colour to best effect</li>
-<li class="fragment">Fundamentals of Matplotlib - plots and animations</li>
-<li class="fragment">Explore Cartopy</li>
+<li>Tailor your visualisations to your audience</li>
+<li>Avoid plotting bad habits</li>
+<li>Reinforce coding best practices</li>
+<li>How to use colour to best effect</li>
+<li>Fundamentals of Matplotlib - plots and animations</li>
+<li>Explore Cartopy</li>
 </ol>
 </section>
 <section id="setup" class="slide level2">
 <h2>Setup</h2>
 <p>Navigate to:<br>
 <br>
-https://github.com/Cambridge-ICCS/summer-school-scientific-vis<br>
+<a href="https://github.com/Cambridge-ICCS/summer-school-scientific-vis">github.com/Cambridge-ICCS/summer-school-scientific-vis</a><br>
 <br>
-and follow installation instructions in the README.<br>
-This Github repo contains this presenation as an <code>html</code> file, and the jupyter notebook.<br>
-Launch Jupyter notebook from terminal - navigate to notebook directory - $jupyter notebook</p>
+and follow installation instructions in the README.</p>
+<p><br>
+</p>
+<p>This Github repo contains this presenation as an <code>html</code> file, and the jupyter notebook.<br>
+To launch Jupyter notebook from terminal:</p>
+<ul>
+<li>navigate to notebook directory</li>
+<li>run <code>jupyter notebook</code></li>
+</ul>
 </section>
 <section id="an-example-of-a-bad-scientific-plot" class="slide level2">
 <h2>An example of a bad scientific plot</h2>
@@ -456,14 +485,18 @@ Launch Jupyter notebook from terminal - navigate to notebook directory - $jupyte
 <p>Compare p-value and variance data for two populations highlighting statistical differences between different factors</p>
 <p>Problems:</p>
 <ol type="1">
-<li class="fragment">Double y-axis</li>
-<li class="fragment">Inverted left y-axis</li>
-<li class="fragment">Y-axis don’t start at zero</li>
-<li class="fragment">Different axis scales on plots for comparison</li>
-<li class="fragment">Different x-axis category orders</li>
+<li>Double y-axis</li>
+<li>Inverted left y-axis</li>
+<li>Y-axis don’t start at zero</li>
+<li>Different axis scales on plots for comparison</li>
+<li>Different x-axis category orders</li>
 </ol>
 </div></div>
-<p>Lee, K.A., Thomas, A.M., Bolte, L.A. et al.&nbsp;Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma. Nat Med 28, 535–544 (2022). https://doi.org/10.1038/s41591-022-01695-5</p>
+<div class="attribution">
+<p>Nat Med 28, 535–544 (2022). <a href="https://doi.org/10.1038/s41591-022-01695-5">https://doi.org/10.1038/s41591-022-01695-5</a><br>
+Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma.<br>
+Lee, K.A., Thomas, A.M., Bolte, L.A. et al.</p>
+</div>
 </section>
 <section id="different-approaches-to-the-same-data" class="slide level2">
 <h2>Different approaches to the same data</h2>
@@ -478,7 +511,15 @@ Launch Jupyter notebook from terminal - navigate to notebook directory - $jupyte
 </div><div class="column">
 <p><img data-src="images/BBC_ICC_2021.png"></p>
 </div></div>
-<p>BBC replotted IPCC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.</p>
+<div class="attribution">
+<p>Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.<br>
+BBC replotted IPCC 2021 report data for a different audience.</p>
+</div>
+</section>
+<section>
+<section id="lets-get-plotting" class="title-slide slide level1 center">
+<h1>Let’s get plotting</h1>
+
 </section>
 <section id="anatomy-of-a-matplotlib-plot" class="slide level2">
 <h2>Anatomy of a Matplotlib plot</h2>
@@ -547,10 +588,10 @@ Launch Jupyter notebook from terminal - navigate to notebook directory - $jupyte
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li class="fragment">Geospatial plotting package built on top of Matplotlib, PROJ, Shapely and NumPy</li>
-<li class="fragment">Projections and transformations</li>
-<li class="fragment">Data handling</li>
-<li class="fragment">Plotting and visualisation</li>
+<li>Geospatial plotting package built on top of Matplotlib, PROJ, Shapely and NumPy</li>
+<li>Projections and transformations</li>
+<li>Data handling</li>
+<li>Plotting and visualisation</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="images/cartopy_image.png" height="300"></p>
@@ -580,33 +621,366 @@ Launch Jupyter notebook from terminal - navigate to notebook directory - $jupyte
 <h2>Visualising vector data</h2>
 <p>Plotting vector data: JL Ex 5<br>
 Animating vector data: JL Ex 6</p>
+<!-- ============================================================================== -->
+</section></section>
+<section>
+<section id="code-organisation" class="title-slide slide level1 center">
+<h1>Code organisation</h1>
+
+</section>
+<section id="plotting-code-is-code" class="slide level2 smaller">
+<h2>Plotting code is code</h2>
+<p>Plotting is often done using scripts with a eagerness for seeing the results.</p>
+<p>However, plotting code is still code and treating it as such can save time and tears later.</p>
+</section>
+<section id="easy-adaptation" class="slide level2">
+<h2>Easy adaptation</h2>
+<p>If you have repeated code consider using:</p>
+<ul>
+<li>loops</li>
+</ul>
+</section>
+<section id="easy-adaptation-1" class="slide level2">
+<h2>Easy adaptation</h2>
+<p>The <code>numpy.ravel()</code> function can be particularly useful for flattening multi-dimensional <code>ax</code> arrays.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>This is OK (1D):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">6</span>)</span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> axis <span class="kw">in</span> ax:</span>
+<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a>    axis.plot(...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+
+</div></div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>But this will fail (2D):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> axis <span class="kw">in</span> ax:</span>
+<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a>    axis.plot(...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<p>Instead use:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> axis <span class="kw">in</span> ax.ravel():</span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a>    axis.plot(...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="easy-adaptation-2" class="slide level2">
+<h2>Easy adaptation</h2>
+<p>If you have repeated code consider using:</p>
+<ul>
+<li>loops</li>
+<li>functions/subroutines
+<ul>
+<li>Make axis a parameter of the function</li>
+<li>When designing functions think about breaking them up according to the matplotlib ‘anatomy’</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> line_plot(axis, x, y):</span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a>    axis.plot(x, y, c<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>    axis.set_xlim(<span class="dv">0</span>, np.<span class="bu">max</span>(x))</span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">36</span>)</span>
+<span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.rand(<span class="dv">36</span>,<span class="dv">50</span>)</span>
+<span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, axis <span class="kw">in</span> <span class="bu">enumerate</span>(ax.ravel()):</span>
+<span id="cb6-14"><a href="" aria-hidden="true" tabindex="-1"></a>    line_plot(axis, x, y[:, i])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="easy-adaptation-3" class="slide level2">
+<h2>Easy adaptation</h2>
+<p>If you have repeated code consider using:</p>
+<ul>
+<li>loops</li>
+<li>functions/subroutines
+<ul>
+<li>Make axis a parameter of the function</li>
+<li>When designing functions think about breaking them up according to the matplotlib ‘anatomy’</li>
+</ul></li>
+<li>Keep (post-)processing of data separate to plotting<br>
+e.g.&nbsp;<code>calclulate_vorticity()</code> and <code>plot_vorticity()</code> routines.</li>
+</ul>
+</section>
+<section id="easy-adaptation-4" class="slide level2">
+<h2>Easy adaptation</h2>
+<p>The <code>**kwargs</code> functionality can be used to grab any extra keyword arguments and wrap them into a dictionary to be passed through wrapper functions.</p>
+<div id="eb05e90d" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> acronym(acronym, <span class="op">**</span>kwargs):</span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"kwargs dictionary: </span><span class="sc">{</span>kwargs<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> acronym</span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> arg <span class="kw">in</span> kwargs.values():</span>
+<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> arg</span>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(acronym(<span class="st">"ICCS: "</span>, a<span class="op">=</span><span class="st">"Institute"</span>, b<span class="op">=</span><span class="st">"Computing"</span>, c<span class="op">=</span><span class="st">"Climate"</span>, d<span class="op">=</span><span class="st">"Science"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>kwargs dictionary: {'a': 'Institute', 'b': 'Computing', 'c': 'Climate', 'd': 'Science'}
+
+ICCS: InstituteComputingClimateScience</code></pre>
+</div>
+</div>
+</section>
+<section id="reuse-in-future" class="slide level2">
+<h2>Reuse in future</h2>
+<p>Place commonly used routines in a file to create your own ‘plotting library’.</p>
+<p>This can be particularly useful if you have domain-specific adaptations to the common matplotlib or cartopy functions, and for consistency into the future.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">"""my_plotting_lib.py - a collection of useful plotting routines"""</span></span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_axis_years():</span>
+<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Custom formatting of axis ticks in years"""</span></span>
+<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_axis_days():</span>
+<span id="cb9-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Custom formatting of axis ticks in days"""</span></span>
+<span id="cb9-9"><a href="" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb9-10"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> align_axis_x(axs, ax_target):</span>
+<span id="cb9-12"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Make x-axis of axs align with `ax_target` in figure"""</span></span>
+<span id="cb9-13"><a href="" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb9-14"><a href="" aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br>
+</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> my_plotting_lib <span class="im">as</span> myplot</span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a>...</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section id="jl-ex-7" class="title-slide slide level1 center">
+<h1>JL Ex 7</h1>
+<!-- ============================================================================== -->
+</section>
+
+<section>
+<section id="colormaps" class="title-slide slide level1 center">
+<h1>Colormaps</h1>
+
+</section>
+<section id="some-science" class="slide level2">
+<h2>Some Science</h2>
+<p>Colour can be defined by two things:</p>
+<ul>
+<li>hue or tint (the ‘colour’ or wavelength)</li>
+<li>luminosity (how bright/dark the color is)</li>
+</ul>
+<p><img data-src="https://changingminds.org/images/colorwheel.jpg" class="absolute" style="top: 15%; right: 20%; height: 20%; "></p>
+<p><img data-src="https://changingminds.org/images/color_shade.png" class="absolute" style="top: 15%; right: 0%; height: 20%; "></p>
+<div class="fragment">
+<p>In the eye these are processed by different cells:</p>
+<ul>
+<li>rod cells process achromaticity (luminosity or greyscale)</li>
+<li>cone cells process hue
+<ul>
+<li>2/3 of cells process longer wavelengths giving better perception across warmer colors</li>
+<li>colour vision deficiency is usually an abnornality in one or more types of cone cell</li>
+<li>The most common CVD is red-green dichromatism (M-cone cell)</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="attribution">
+<p>Image from <span class="citation" data-cites="crameri2020misuse">Crameri, Shephard, and Heron (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+<aside><div>
+<p>I seriously recommend <em>The misuse of colour in science communication</em> <span class="citation" data-cites="crameri2020misuse">(<a href="#/references" role="doc-biblioref" onclick="">Crameri, Shephard, and Heron 2020</a>)</span> for more.</p>
+</div></aside></section>
+<section id="interpretability-and-colourblindness" class="slide level2">
+<h2>Interpretability and colourblindness</h2>
+<p>Consider types of colormap in terms of luminosity:</p>
+<ul>
+<li>Uniform</li>
+<li>Sequential</li>
+<li>Cyclic</li>
+<li>Multi-Sequential</li>
+</ul>
+<p>A quick check for how colormaps may be perceived<br>
+by those with CVD is to examine the grayscale<br>
+version of the image.</p>
+<p><img data-src="images/cmap_types.png" class="absolute" style="top: 15%; right: 0%; height: 75%; "></p>
+
+<aside><div>
+<p>Matplotlib provides <a href="https://matplotlib.org/stable/users/explain/colors/colormaps.html#grayscale-conversion">Grayscale conversions</a> for their colormaps.</p>
+</div></aside></section>
+<section id="perceptual-uniformity" class="slide level2">
+<h2>Perceptual uniformity</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>A description of how much data variation is weighted across the colormap</li>
+<li>Low uniformity leads to:
+<ul>
+<li>artificial features</li>
+<li>washout of real features</li>
+</ul></li>
+<li>Always use a perceptually uniform colormap</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/mars.png"></p>
+</div></div>
+<div class="attribution">
+<p>Image from <span class="citation" data-cites="crameri2020misuse">Crameri, Shephard, and Heron (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="https://i0.wp.com/eos.org/wp-content/uploads/2020/05/comparison-rainbow-cool-warm-wave-colormaps.png"></p>
+<div class="attribution">
+<p>Image from <span class="citation" data-cites="zeller2020vis">Zeller and Rogers (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+</section>
+<section id="cmocean" class="slide level2">
+<h2>cmocean</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>cmocean is a package of colormaps designed by oceanographers to be:</p>
+<ul>
+<li>perceptually uniform</li>
+<li>intuitively reflect the data they are representing
+<ul>
+<li>sequential, divergent, or cyclic</li>
+<li>intuitive colors</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/cmocean.png"></p>
+</div></div>
+<div class="attribution">
+<p>Image from <span class="citation" data-cites="thyng2016true">Thyng et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p>
+</div>
+</section>
+<section id="custom-color-maps" class="slide level2">
+<h2>Custom color maps</h2>
+<p>All default colormaps are designed apart from the data they are used for. To truly get the best representation of our data we may need to tweak or use a custom colormap.</p>
+<p>Matplotlib provides tools for tweaking the predefined and defining new colormaps.</p>
+<p><img data-src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*ZjIfqcx8MCEc-JCLv33PKw.png" style="width:100.0%"></p>
+<div class="attribution">
+<p>Australian population by <span class="citation" data-cites="halupka2020beautiful">(<a href="#/references" role="doc-biblioref" onclick="">Halupka 2020</a>)</span></p>
+</div>
+</section>
+<section id="ocean-eddies" class="slide level2">
+<h2>Ocean Eddies</h2>
+<p><img data-src="https://i0.wp.com/eos.org/wp-content/uploads/2020/05/desaturated-rainbow-specialized-colormap-ocean-eddies.png"></p>
+<div class="attribution">
+<p>Image by Francesca Samsel and M. Petersen, LANL taken from <span class="citation" data-cites="zeller2020vis">Zeller and Rogers (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></p>
+</div>
+</section>
+<section id="matplotlib-norms" class="slide level2">
+<h2>Matplotlib Norms</h2>
+<p>We would often use a <code>vmin</code> and <code>vmax</code> value to normalise a colormap to a data range:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax.pcolormesh(x, y, z, vmin<span class="op">=</span><span class="dv">273</span>, vmax<span class="op">=</span><span class="dv">300</span>, cmap<span class="op">=</span><span class="st">"cmo.Thermal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This can be done with the <code>Normalize</code> class and passing a <code>norm</code>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.colors <span class="im">as</span> mpc</span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> mpc.Normalize(vmin<span class="op">=</span><span class="dv">273</span>, vmax<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax.pcolormesh(x, y, z, norm<span class="op">=</span>my_norm, cmap<span class="op">=</span><span class="st">'cmp.solar'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>The benefit of this approach is it opens up a variety of other normalization options:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> mpc.Normalize(vmin<span class="op">=</span><span class="dv">273</span>, vmax<span class="op">=</span><span class="dv">300</span>, clip<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> mpc.CenteredNorm(vcenter<span class="op">=</span><span class="fl">286.5</span>, halfrange<span class="op">=</span><span class="fl">13.55</span>)</span>
+<span id="cb13-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> mpc.LogNorm(vmin<span class="op">=</span><span class="dv">273</span>, vmax<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb13-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> mpc.TwoSlopeNorm(vcenter<span class="op">=</span><span class="dv">290</span>, vmin<span class="op">=</span><span class="dv">273</span>, vmax<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb13-8"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="" aria-hidden="true" tabindex="-1"></a>my_norm <span class="op">=</span> mpc.PowerNorm(<span class="dv">2</span>, vmin<span class="op">=</span><span class="dv">273</span>, vmax<span class="op">=</span><span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<aside><div>
+<p><a href="https://matplotlib.org/stable/users/explain/colors/colormapnorms.html">Matplotlib norm documentation</a></p>
+</div></aside></section></section>
+<section id="jl-ex-8" class="title-slide slide level1 center">
+<h1>JL Ex 8</h1>
+<!-- ============================================================================== -->
+</section>
+
+<section>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+
 </section>
 <section id="learning-outcomes-1" class="slide level2">
 <h2>Learning Outcomes</h2>
 <ol type="1">
-<li class="fragment">Tailor your visualisations to your audience</li>
-<li class="fragment">Avoid plotting bad habits</li>
-<li class="fragment">Coding best practices for good plots</li>
-<li class="fragment">How to use colour to best effect</li>
-<li class="fragment">Fundamentals of Matplotlib - plots and animations</li>
-<li class="fragment">Explore Cartopy</li>
+<li>Tailor your visualisations to your audience</li>
+<li>Avoid plotting bad habits</li>
+<li>Coding best practices for good plots</li>
+<li>How to use colour to best effect</li>
+<li>Fundamentals of Matplotlib - plots and animations</li>
+<li>Explore Cartopy</li>
 </ol>
 </section>
-<section id="section" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p><br>
 </p>
-<p>“The greatest value of a picture is when it forces us to notice what we never expected to see.” — John W. Tukey</p>
+<blockquote>
+<p><em>“The greatest value of a picture is when it forces us to notice what we never expected to see.”</em><br>
+— John W. Tukey</p>
+</blockquote>
 <p><br>
 </p>
-<p>“Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful.” — Chip &amp; Dan Heath</p>
+<blockquote>
+<p><em>“Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful.”</em><br>
+— Chip &amp; Dan Heath</p>
+</blockquote>
+</section>
+<section id="thanks-for-listening" class="slide level2 smaller">
+<h2>Thanks for Listening</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<p>Get in touch:</p>
+</div><div class="column" style="width:35%;">
+<p><i class="fa-solid fa-pencil" aria-label="pencil"></i> &nbsp;James Emberton</p>
+<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp;<a href="mailto:je484@cam.ac.uk">je484[AT]cam.ac.uk</a></p>
+<p><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;<a href="https://github.com/j-emberton">j-emberton</a></p>
+</div><div class="column" style="width:45%;">
+<p><i class="fa-solid fa-pencil" aria-label="pencil"></i> &nbsp;Jack Atkinson</p>
+<p><i class="fa-solid fa-envelope" aria-label="envelope"></i> &nbsp;<a href="mailto:jwa34@cam.ac.uk">jwa34[AT]cam.ac.uk</a></p>
+<p><i class="fa-brands fa-github" aria-label="github"></i> &nbsp;<a href="https://github.com/jatkinson1000">jatkinson1000</a></p>
+<p><i class="fa-solid fa-globe" aria-label="globe"></i> &nbsp;<a href="https://jackatkinson.net">jackatkinson.net</a></p>
+<p><i class="fa-brands fa-mastodon" aria-label="mastodon"></i> &nbsp;<a href="https://fosstodon.org/@jatkinson1000">@jatkinson1000@fosstodon.org</a></p>
+</div></div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-crameri2020misuse" class="csl-entry" role="listitem">
+Crameri, Fabio, Grace E Shephard, and Philip J Heron. 2020. <span>“The Misuse of Colour in Science Communication.”</span> <em>Nature Communications</em> 11 (1): 5444.
+</div>
+<div id="ref-halupka2020beautiful" class="csl-entry" role="listitem">
+Halupka, Kerry. 2020. <span>“Beautiful Custom Colormaps with <span>M</span>atplotlib.”</span> <a href="https://towardsdatascience.com/beautiful-custom-colormaps-with-matplotlib-5bab3d1f0e72" class="uri">https://towardsdatascience.com/beautiful-custom-colormaps-with-matplotlib-5bab3d1f0e72</a>.
+</div>
+<div id="ref-hawkins2022climatelabbookVisualisation" class="csl-entry" role="listitem">
+Hawkins, Ed. 2022. <span>“<span>C</span>limate <span>L</span>ab <span>B</span>ook – <span>V</span>isualisation Resources.”</span> <a href="https://www.climate-lab-book.ac.uk/visualisation-resources/" class="uri">https://www.climate-lab-book.ac.uk/visualisation-resources/</a>.
+</div>
+<div id="ref-solomon2022real" class="csl-entry" role="listitem">
+Solomon, Brad. n.d. <span>“<span>R</span>eal <span>P</span>ython – <span>P</span>ython <span>P</span>lotting <span>W</span>ith <span>M</span>atplotlib.”</span> <a href="https://realpython.com/python-matplotlib-guide/" class="uri">https://realpython.com/python-matplotlib-guide/</a>.
+</div>
+<div id="ref-thyng2016true" class="csl-entry" role="listitem">
+Thyng, Kristen M, Chad A Greene, Robert D Hetland, Heather M Zimmerle, and Steven F DiMarco. 2016. <span>“True Colors of Oceanography: Guidelines for Effective and Accurate Colormap Selection.”</span> <em>Oceanography</em> 29 (3): 9–13.
+</div>
+<div id="ref-zeller2020vis" class="csl-entry" role="listitem">
+Zeller, Stephanie, and David Rogers. 2020. <span>“Visualizing Science: How Color Determines What We See.”</span> <a href="https://eos.org/features/visualizing-science-how-color-determines-what-we-see" class="uri">https://eos.org/features/visualizing-science-how-color-determines-what-we-see</a>.
+</div>
+</div>
 <div class="quarto-auto-generated-content">
-<p><img src="https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/iccs_ucam_combined_reverse_colour.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -617,6 +991,7 @@ Animating vector data: JL Ex 6</p>
   <script src="Scientific_Vis_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="Scientific_Vis_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="Scientific_Vis_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Scientific_Vis_files/libs/revealjs/plugin/reveal-attribution/attribution.js"></script>
   <script src="Scientific_Vis_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -808,7 +1183,7 @@ Animating vector data: JL Ex 6</p>
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealAttribution, QuartoSupport,
 
           RevealMath,
           RevealNotes,
