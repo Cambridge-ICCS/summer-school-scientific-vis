@@ -31,7 +31,7 @@ revealjs-plugins:
 jupyter: python3
 ---
 
-## Summary
+## Outlook
 
 - Discuss examples of good and bad visualisations \
 - Principles of good visualisation\
@@ -52,15 +52,17 @@ jupyter: python3
 
 Navigate to:\
 \
-https://github.com/Cambridge-ICCS/summer-school-scientific-vis\
+[github.com/Cambridge-ICCS/summer-school-scientific-vis](https://github.com/Cambridge-ICCS/summer-school-scientific-vis)\
 \
 and follow installation instructions in the README.
+
 \
-This Github repo contains this presenation as an `html` file, and the jupyter notebook.
-\
-Launch Jupyter notebook from terminal
+
+This Github repo contains this presenation as an `html` file, and the jupyter notebook.\
+To launch Jupyter notebook from terminal:
+
 - navigate to notebook directory
-- $jupyter notebook
+- run `jupyter notebook`
 
 ## An example of a bad scientific plot
 
@@ -267,6 +269,8 @@ Animating vector data: JL Ex 6
 <!-- ============================================================================== -->
 
 
+# Summary
+
 ## Learning Outcomes
 
 1. Tailor your visualisations to your audience
@@ -280,11 +284,13 @@ Animating vector data: JL Ex 6
 
 \
 
-"The greatest value of a picture is when it forces us to notice what we never expected to see." — John W. Tukey
+> _"The greatest value of a picture is when it forces us to notice what we never expected to see."_\
+— John W. Tukey
 
 \
 
-"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
+> _"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful."_\
+— Chip & Dan Heath
 
 
 ## Thanks for Listening {.smaller}

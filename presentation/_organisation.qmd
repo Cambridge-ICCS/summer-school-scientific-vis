@@ -79,7 +79,7 @@ def line_plot(axis, x, y):
 ...
 
 fig, ax = plt.subplots(2, 3)
-x = np.random.rand(36)
+x = np.arange(36)
 y = np.random.rand(36,50)
 
 for i, axis in enumerate(ax.ravel()):
@@ -150,3 +150,5 @@ import my_plotting_lib as myplot
 ...
 ...
 ```
+
+# JL Ex 7
