@@ -8,13 +8,13 @@ authors:
   - name: Jack Atkinson
     orcid: 0000-0001-5001-4812
     affiliations: ICCS - University of Cambridge
+bibliography: references.bib
 format: 
   revealjs:
     title-slide-attributes: 
       data-background-image: images/ICCS_title_slide.png
     theme: custom_theme.scss
     embed-resources: false
-    incremental: true
     history: false
     smaller: true
     highlight-style: a11y
@@ -25,11 +25,13 @@ format:
     # parallax-background-size: 110%
     # parallax-background-horizontal: 0
     # margin: 0.25
-    logo: https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/iccs_ucam_combined_reverse_colour.png
+    # logo: https://iccs.cam.ac.uk/sites/iccs.cam.ac.uk/files/iccs_ucam_combined_reverse_colour.png
+revealjs-plugins:
+  - attribution
 jupyter: python3
 ---
 
-## Summary
+## Outlook
 
 - Discuss examples of good and bad visualisations \
 - Principles of good visualisation\
@@ -50,15 +52,17 @@ jupyter: python3
 
 Navigate to:\
 \
-https://github.com/Cambridge-ICCS/summer-school-scientific-vis\
+[github.com/Cambridge-ICCS/summer-school-scientific-vis](https://github.com/Cambridge-ICCS/summer-school-scientific-vis)\
 \
 and follow installation instructions in the README.
+
 \
-This Github repo contains this presenation as an `html` file, and the jupyter notebook.
-\
-Launch Jupyter notebook from terminal
+
+This Github repo contains this presenation as an `html` file, and the jupyter notebook.\
+To launch Jupyter notebook from terminal:
+
 - navigate to notebook directory
-- $jupyter notebook
+- run `jupyter notebook`
 
 ## An example of a bad scientific plot
 
@@ -85,7 +89,11 @@ Problems:
 :::
 ::::
 
-Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma. Nat Med 28, 535–544 (2022). https://doi.org/10.1038/s41591-022-01695-5
+:::{.attribution}
+Nat Med 28, 535–544 (2022). [https://doi.org/10.1038/s41591-022-01695-5](https://doi.org/10.1038/s41591-022-01695-5)\
+Cross-cohort gut microbiome associations with immune checkpoint inhibitor response in advanced melanoma.\
+Lee, K.A., Thomas, A.M., Bolte, L.A. et al.
+:::
 
 ## Different approaches to the same data
 
@@ -100,8 +108,14 @@ Lee, K.A., Thomas, A.M., Bolte, L.A. et al. Cross-cohort gut microbiome associat
 :::
 
 ::::
-BBC replotted IPCC 2021 report data for a different audience. Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.
 
+:::{.attribution}
+Plot adds colour and annotation to guide interpreatation of the data for a non-technical audience.\
+BBC replotted IPCC 2021 report data for a different audience.
+:::
+
+
+# Let's get plotting
 
 ## Anatomy of a Matplotlib plot
 
@@ -244,6 +258,19 @@ Plotting vector data: JL Ex 5
 \
 Animating vector data: JL Ex 6
 
+<!-- ============================================================================== -->
+
+{{< include _organisation.qmd >}}
+
+<!-- ============================================================================== -->
+
+{{< include _colormaps.qmd >}}
+
+<!-- ============================================================================== -->
+
+
+# Summary
+
 ## Learning Outcomes
 
 1. Tailor your visualisations to your audience
@@ -257,8 +284,48 @@ Animating vector data: JL Ex 6
 
 \
 
-"The greatest value of a picture is when it forces us to notice what we never expected to see." — John W. Tukey
+> _"The greatest value of a picture is when it forces us to notice what we never expected to see."_\
+— John W. Tukey
 
 \
 
-"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful." — Chip & Dan Heath
+> _"Data are just summaries of thousands of stories – tell a few of those stories to help make the data meaningful."_\
+— Chip & Dan Heath
+
+
+## Thanks for Listening {.smaller}
+
+:::: {.columns}
+
+::: {.column width="20%"}
+Get in touch:
+:::
+::: {.column width="35%"}
+{{< fa pencil >}} \ James Emberton
+
+{{< fa solid envelope >}} \ [je484[AT]cam.ac.uk](mailto:je484@cam.ac.uk)
+
+{{< fa brands github >}} \ [j-emberton](https://github.com/j-emberton)
+:::
+::: {.column width="45%"}
+{{< fa pencil >}} \ Jack Atkinson
+
+{{< fa solid envelope >}} \ [jwa34[AT]cam.ac.uk](mailto:jwa34@cam.ac.uk)
+
+{{< fa brands github >}} \ [jatkinson1000](https://github.com/jatkinson1000)
+
+{{< fa solid globe >}} \ [jackatkinson.net](https://jackatkinson.net)
+
+{{< fa brands mastodon >}} \ [\@jatkinson1000\@fosstodon.org](https://fosstodon.org/@jatkinson1000)
+:::
+::::
+
+
+## References
+
+---
+nocite: |
+  @*
+---
+::: {#refs}
+:::

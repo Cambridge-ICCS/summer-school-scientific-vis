@@ -28,6 +28,7 @@ dependencies = [
     "cartopy",
     "xarray",
     "scipy",
+    "cmocean",
 ]
 
 [project.optional-dependencies]

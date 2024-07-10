@@ -1,0 +1,167 @@
+# Colormaps
+
+
+## Some Science
+
+Colour can be defined by two things:
+
+- hue or tint (the 'colour' or wavelength)
+- luminosity (how bright/dark the color is)
+
+![](https://changingminds.org/images/colorwheel.jpg){.absolute top=15% right=20% height=20%}
+
+![](https://changingminds.org/images/color_shade.png){.absolute top=15% right=0% height=20%}
+
+:::{.fragment}
+In the eye these are processed by different cells:
+
+- rod cells process achromaticity (luminosity or greyscale)
+- cone cells process hue
+  - 2/3 of cells process longer wavelengths giving better perception across warmer colors
+  - colour vision deficiency is usually an abnornality in one or more types of cone cell
+  - The most common CVD is red-green dichromatism (M-cone cell)
+
+:::{.aside}
+I seriously recommend _The misuse of colour in science communication_ [@crameri2020misuse] for more.
+:::
+:::
+
+:::{.attribution}
+Image from @crameri2020misuse
+:::
+
+
+## Interpretability and colourblindness
+
+Consider types of colormap in terms of luminosity:
+
+- Uniform
+- Sequential
+- Cyclic
+- Multi-Sequential
+
+A quick check for how colormaps may be perceived\
+by those with CVD is to examine the grayscale\
+version of the image.
+
+![](images/cmap_types.png){.absolute top=15% right=0% height=75%}
+
+:::{.aside}
+Matplotlib provides [Grayscale conversions](https://matplotlib.org/stable/users/explain/colors/colormaps.html#grayscale-conversion) for their colormaps.
+:::
+
+
+
+## Perceptual uniformity
+
+::::{.columns}
+:::{.column width=40%}
+
+- A description of how much data variation is weighted across the colormap
+- Low uniformity leads to:
+  - artificial features
+  - washout of real features
+- Always use a perceptually uniform colormap
+
+:::
+:::{.column width=60%}
+![](images/mars.png)
+:::
+::::
+
+:::{.attribution}
+Image from @crameri2020misuse
+:::
+
+
+
+##
+
+![](https://i0.wp.com/eos.org/wp-content/uploads/2020/05/comparison-rainbow-cool-warm-wave-colormaps.png)
+
+:::{.attribution}
+Image from @zeller2020vis
+:::
+
+
+
+## cmocean
+
+::::{.columns}
+:::{.column width=40%}
+cmocean is a package of colormaps designed by oceanographers to be:
+
+- perceptually uniform
+- intuitively reflect the data they are representing
+  - sequential, divergent, or cyclic
+  - intuitive colors
+:::
+:::{.column width=60%}
+![](images/cmocean.png)
+:::
+::::
+
+:::{.attribution}
+Image from @thyng2016true
+:::
+
+
+
+## Custom color maps
+
+All default colormaps are designed apart from the data they are used for.
+To truly get the best representation of our data we may need to tweak or use
+a custom colormap.
+
+Matplotlib provides tools for tweaking the predefined and defining new colormaps.
+
+![](https://miro.medium.com/v2/resize:fit:2000/format:webp/1*ZjIfqcx8MCEc-JCLv33PKw.png){width=100%}
+
+:::{.attribution}
+Australian population by [@halupka2020beautiful]
+:::
+
+## Ocean Eddies
+
+![](https://i0.wp.com/eos.org/wp-content/uploads/2020/05/desaturated-rainbow-specialized-colormap-ocean-eddies.png)
+
+:::{.attribution}
+Image by Francesca Samsel and M. Petersen, LANL taken from @zeller2020vis
+:::
+
+
+
+## Matplotlib Norms
+
+We would often use a `vmin` and `vmax` value to normalise a colormap to a data range:
+```python
+im = ax.pcolormesh(x, y, z, vmin=273, vmax=300, cmap="cmo.Thermal")
+```
+
+This can be done with the `Normalize` class and passing a `norm`:
+```python
+import matplotlib.colors as mpc
+my_norm = mpc.Normalize(vmin=273, vmax=300)
+im = ax.pcolormesh(x, y, z, norm=my_norm, cmap='cmp.solar')
+```
+
+:::{.fragment}
+The benefit of this approach is it opens up a variety of other normalization options:
+```python
+my_norm = mpc.Normalize(vmin=273, vmax=300, clip=True)
+
+my_norm = mpc.CenteredNorm(vcenter=286.5, halfrange=13.55)
+
+my_norm = mpc.LogNorm(vmin=273, vmax=300)
+
+my_norm = mpc.TwoSlopeNorm(vcenter=290, vmin=273, vmax=300)
+
+my_norm = mpc.PowerNorm(2, vmin=273, vmax=300)
+```
+:::
+
+:::{.aside}
+[Matplotlib norm documentation](https://matplotlib.org/stable/users/explain/colors/colormapnorms.html)
+:::
+
+# JL Ex 8
