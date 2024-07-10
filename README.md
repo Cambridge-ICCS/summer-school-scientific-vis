@@ -187,3 +187,7 @@ We will then preform a review and merge once ready.
 If you would like support using these materials, adapting them to your needs, or
 delivering them please get in touch either via GitHub or via
 [ICCS](https://github.com/Cambridge-ICCS).
+
+## CoLab
+
+[Notebook](https://colab.research.google.com/github/Cambridge-ICCS/summer-school-scientific-vis/blob/colab/notebook/Scientific_Visualisation.ipynb)
